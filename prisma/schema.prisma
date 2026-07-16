@@ -1,0 +1,61 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String        @id @default(cuid())
+  email        String        @unique
+  name         String
+  passwordHash String
+  phone        String?
+  company      String?
+  createdAt    DateTime      @default(now())
+  businesses   Business[]
+  subscription Subscription?
+}
+
+model Business {
+  id         String      @id @default(cuid())
+  name       String
+  platform   String      @default("Google")
+  reviewUrl  String
+  userId     String
+  user       User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  links      ReviewLink[]
+  reviews    Review[]
+  createdAt  DateTime    @default(now())
+}
+
+model ReviewLink {
+  id         String   @id @default(cuid())
+  token      String   @unique
+  businessId String
+  business   Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  clicks     Int      @default(0)
+  createdAt  DateTime @default(now())
+}
+
+model Review {
+  id         String   @id @default(cuid())
+  author     String?
+  rating     Int?
+  text       String?
+  source     String?
+  businessId String
+  business   Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  createdAt  DateTime @default(now())
+}
+
+model Subscription {
+  id       String @id @default(cuid())
+  userId   String @unique
+  plan     String @default("starter")
+  status   String @default("active")
+  stripeId String?
+  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
