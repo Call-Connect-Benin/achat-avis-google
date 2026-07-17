@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     q: "Combien coûte le service ?",
-    a: "Des forfaits sans engagement démarrent à 29 $/mois, avec un essai gratuit. Aucune carte bancaire n'est demandée pour commencer.",
+    a: "Des forfaits sans engagement démarrent à 235 €/mois, avec un essai gratuit. Aucune carte bancaire n'est demandée pour commencer.",
   },
   {
     q: "Que deviennent les données de mes clients ?",

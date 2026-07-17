@@ -19,7 +19,7 @@ export async function generateMetadata({
   if (!article) return {};
   const url = `${site.url}/blog/${article.slug}`;
   return {
-    title: `${article.title} | ${site.name}`,
+    title: article.title,
     description: article.description,
     alternates: { canonical: url },
     openGraph: {

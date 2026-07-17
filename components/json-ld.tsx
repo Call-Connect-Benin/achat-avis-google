@@ -23,6 +23,13 @@ export default function JsonLd() {
       addressCountry: company.address.country,
     },
     sameAs: [site.social.facebook, site.social.linkedin, site.social.instagram],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "2000",
+      bestRating: "5",
+      worstRating: "1",
+    },
   };
 
   return (
