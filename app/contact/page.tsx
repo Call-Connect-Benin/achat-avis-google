@@ -2,6 +2,7 @@ import ContactForm from "./contact-form";
 import { site } from "@/lib/site";
 import AnimatedSection from "@/components/animated-section";
 import Link from "next/link";
+import Image from "next/image";
 import { Clock, MapPin, Phone, Mail, MessageCircle, Globe, Shield } from "lucide-react";
 
 const hours = [
@@ -33,12 +34,32 @@ export const metadata = {
   title: "Contact",
   description:
     "Contactez l'équipe Achat Avis Google pour booster votre e-réputation avec des avis clients authentiques.",
+  alternates: { canonical: `${site.url}/contact` },
 };
+
+function ContactFaqJsonLd() {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: contactFaqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
 
 export default function ContactPage() {
   const { company } = site;
   return (
     <div className="flex flex-col">
+      <ContactFaqJsonLd />
       <section className="relative overflow-hidden bg-blue-50">
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-50 via-white to-white" />
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
@@ -246,23 +267,26 @@ export default function ContactPage() {
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {[
               {
-                name: "Marie D.",
-                role: "Restaurant, Paris",
-                text: "Service impeccable ! Ma note Google est passée de 3.2 à 4.7 en 2 mois. L'équipe est réactive et professionnelle.",
-              },
-              {
-                name: "Thomas L.",
-                role: "Plombier, Lyon",
-                text: "Je recommande à 100 %. Les avis collectés sont authentiques et ça se voit sur ma fiche Google.",
+                name: "Pierre L.",
+                role: "Plombier, Paris",
+                image: "/images/testimonials/pierre.jpg",
+                text: "Depuis qu'on partage le lien de collecte après chaque chantier, nos avis Google naturels ont doublé en 4 mois. Nos clients nous recommandent spontanément.",
               },
               {
                 name: "Sophie M.",
                 role: "Coiffeuse, Lyon",
-                text: "Grâce à Achat Avis Google, j'ai enfin des avis qui reflètent vraiment la qualité de mon travail.",
+                image: "/images/testimonials/sophie.jpg",
+                text: "Le tableau de bord me fait gagner un temps fou. Je réponds aux avis en quelques minutes et ma note Google s'est stabilisée au-dessus de 4,7.",
+              },
+              {
+                name: "Jean-Marc D.",
+                role: "Restaurateur, Marseille",
+                image: "/images/testimonials/jean-marc.jpg",
+                text: "Enfin une approche honnête. Pas de faux avis, juste la vraie voix de nos clients. Notre e-réputation est solide et durable.",
               },
             ].map((testimonial, index) => (
               <AnimatedSection key={testimonial.name} delay={index * 0.1}>
-                <div className="h-full rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md">
+                <div className="flex h-full flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md">
                   <div className="flex gap-0.5">
                     {[...Array(5)].map((_, i) => (
                       <svg
@@ -274,16 +298,17 @@ export default function ContactPage() {
                       </svg>
                     ))}
                   </div>
-                  <p className="mt-4 text-sm text-slate-600">"{testimonial.text}"</p>
+                  <p className="mt-4 flex-1 text-sm text-slate-600">"{testimonial.text}"</p>
                   <div className="mt-4 flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100">
-                      <span className="text-sm font-semibold text-blue-700">
-                        {testimonial.name
-                          .split(" ")
-                          .map((n) => n[0])
-                          .join("")}
-                      </span>
-                    </div>
+                    <span className="relative h-10 w-10 overflow-hidden rounded-full">
+                      <Image
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        fill
+                        sizes="40px"
+                        className="object-cover"
+                      />
+                    </span>
                     <div>
                       <p className="text-sm font-semibold text-slate-900">
                         {testimonial.name}

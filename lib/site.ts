@@ -5,6 +5,12 @@ export const site = {
   tagline: "La plateforme pour collecter de vrais avis clients",
   description:
     "Achat Avis Google aide les entreprises à collecter, gérer et mettre en valeur des avis clients authentiques sur Google, Trustpilot et les autres plateformes. E-réputation conforme et durable.",
+  logo: "https://achat-avis-google.com/images/logo.png",
+  ogImage: "https://achat-avis-google.com/images/og-default.png",
+  author: {
+    name: "Équipe Achat Avis Google",
+    url: "https://achat-avis-google.com/e-reputation",
+  },
   company: {
     legalName: "Achat Avis Google",
     address: {

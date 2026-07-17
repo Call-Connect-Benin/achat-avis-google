@@ -46,3 +46,6 @@ next-env.d.ts
 # prisma / sqlite
 prisma/*.db
 prisma/*.db-journal
+
+# kilo local config
+.kilo/

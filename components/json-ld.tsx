@@ -8,8 +8,12 @@ export default function JsonLd() {
     name: site.name,
     description: site.description,
     url: site.url,
+    logo: site.logo,
+    image: site.ogImage,
     email: company.email,
     telephone: company.phone,
+    priceRange: "€€",
+    areaServed: "FR",
     address: {
       "@type": "PostalAddress",
       streetAddress: company.address.street,

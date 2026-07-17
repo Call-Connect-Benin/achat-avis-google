@@ -17,9 +17,35 @@ export async function generateMetadata({
   const { slug } = await params;
   const article = getArticle(slug);
   if (!article) return {};
+  const url = `${site.url}/blog/${article.slug}`;
   return {
     title: `${article.title} | ${site.name}`,
     description: article.description,
+    alternates: { canonical: url },
+    openGraph: {
+      title: `${article.title} | ${site.name}`,
+      description: article.description,
+      url,
+      siteName: site.name,
+      locale: "fr_FR",
+      type: "article",
+      publishedTime: article.date,
+      authors: [site.author.name],
+      images: [
+        {
+          url: site.ogImage,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${article.title} | ${site.name}`,
+      description: article.description,
+      images: [site.ogImage],
+    },
   };
 }
 
@@ -39,6 +65,65 @@ function Block({ block }: { block: ArticleBlock }) {
   return <p className="mt-4 leading-relaxed text-slate-700">{block.text}</p>;
 }
 
+function ArticleJsonLd({ article }: { article: ReturnType<typeof getArticle> }) {
+  if (!article) return null;
+  const url = `${site.url}/blog/${article.slug}`;
+  const graph = [
+    {
+      "@type": "Article",
+      headline: article.title,
+      description: article.description,
+      datePublished: article.date,
+      dateModified: article.date,
+      author: {
+        "@type": "Organization",
+        name: site.author.name,
+        url: site.author.url,
+      },
+      publisher: {
+        "@type": "Organization",
+        name: site.name,
+        logo: {
+          "@type": "ImageObject",
+          url: site.logo,
+        },
+      },
+      mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Accueil", item: site.url },
+        { "@type": "ListItem", position: 2, name: "Blog", item: `${site.url}/blog` },
+        { "@type": "ListItem", position: 3, name: article.title, item: url },
+      ],
+    },
+  ];
+
+  if (article.faq && article.faq.length > 0) {
+    graph.push({
+      "@type": "FAQPage",
+      mainEntity: article.faq.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: f.answer,
+        },
+      })),
+    } as never);
+  }
+
+  const data = { "@context": "https://schema.org", "@graph": graph };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
 export default async function ArticlePage({
   params,
 }: {
@@ -55,7 +140,9 @@ export default async function ArticlePage({
   });
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-16">
+    <>
+      <ArticleJsonLd article={article} />
+      <main className="mx-auto max-w-3xl px-4 py-16">
         <Link href="/blog" className="text-sm font-medium text-sky-700 hover:underline">
           ← Tous les articles
         </Link>
@@ -77,6 +164,27 @@ export default async function ArticlePage({
           ))}
         </article>
 
+        {article.faq && article.faq.length > 0 && (
+          <section className="mt-12" aria-label="Questions fréquentes">
+            <h2 className="text-2xl font-semibold text-slate-900">
+              Questions fréquentes
+            </h2>
+            <div className="mt-4 space-y-4">
+              {article.faq.map((f) => (
+                <div
+                  key={f.question}
+                  className="rounded-2xl border border-slate-200 bg-white p-6"
+                >
+                  <h3 className="text-lg font-semibold text-slate-900">
+                    {f.question}
+                  </h3>
+                  <p className="mt-2 leading-relaxed text-slate-700">{f.answer}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         <div className="mt-12 rounded-2xl bg-sky-50 p-6 text-center">
           <p className="font-semibold text-slate-900">
             Prêt à collecter vos premiers avis ?
@@ -97,5 +205,6 @@ export default async function ArticlePage({
           </div>
         </div>
       </main>
+    </>
   );
 }

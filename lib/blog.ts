@@ -3,6 +3,11 @@ export type ArticleBlock =
   | { type: "h2"; text: string }
   | { type: "ul"; items: string[] };
 
+export type ArticleFaq = {
+  question: string;
+  answer: string;
+};
+
 export type Article = {
   slug: string;
   title: string;
@@ -11,6 +16,7 @@ export type Article = {
   date: string;
   readingTime: string;
   blocks: ArticleBlock[];
+  faq?: ArticleFaq[];
 };
 
 export const articles: Article[] = [
@@ -57,6 +63,23 @@ export const articles: Article[] = [
       {
         type: "p",
         text: "L'objectif n'est pas un pic isolé mais un flux régulier : c'est ce qui rassure Google et vos futurs clients. Notre générateur de QR code et notre audit de fiche vous aident à démarrer gratuitement.",
+      },
+    ],
+    faq: [
+      {
+        question: "Comment obtenir plus d'avis Google rapidement ?",
+        answer:
+          "Le moyen le plus rapide est d'envoyer le lien direct d'avis (g.page/r/…) ou un QR code à chaud, juste après une expérience positive, par SMS ou e-mail.",
+      },
+      {
+        question: "Quel est le meilleur moment pour demander un avis Google ?",
+        answer:
+          "Demandez l'avis juste après une expérience positive : fin de prestation, livraison réussie ou encaissement, quand l'émotion positive est encore fraîche.",
+      },
+      {
+        question: "Combien d'avis Google faut-il pour être crédible ?",
+        answer:
+          "Un volume régulier de 30 à 50 avis authentiques et récents suffit à établir une crédibilité locale solide, la fraîcheur comptant autant que le volume.",
       },
     ],
   },
@@ -331,6 +354,18 @@ export const articles: Article[] = [
         text: "Répondre rapidement et courtoisement montre votre sérieux. C'est aussi l'occasion de corriger un fait ou de renvoyer vers un canal privé.",
       },
     ],
+    faq: [
+      {
+        question: "Comment répondre à un avis négatif sur Google ?",
+        answer:
+          "Remerciez le client, reconnaissez le problème sans être défensif, proposez un contact direct (téléphone ou e-mail) et restez professionnel. Répondre sous 24 h limite l'impact négatif.",
+      },
+      {
+        question: "Faut-il répondre aux avis négatifs ?",
+        answer:
+          "Oui. Ignorer un avis négatif l'amplifie, tandis qu'une réponse calme et professionnelle est un signal de confiance pour les futurs clients qui lisent d'abord la réponse.",
+      },
+    ],
   },
   {
     slug: "peut-on-supprimer-faux-avis-google",
@@ -398,6 +433,18 @@ export const articles: Article[] = [
       {
         type: "p",
         text: "Notre générateur de lien et notre outil d'audit vous aident à structurer votre collecte et à atteindre ces objectifs.",
+      },
+    ],
+    faq: [
+      {
+        question: "Combien d'avis Google faut-il pour rassurer les clients ?",
+        answer:
+          "Comptez 10 à 30 avis pour commencer à rassurer, 30 à 50 pour une crédibilité locale solide, et plus de 100 pour dominer la concurrence locale. La fraîcheur compte autant que le volume.",
+      },
+      {
+        question: "Le volume d'avis est-il plus important que la note ?",
+        answer:
+          "Les deux comptent. Google privilégie les fiches actives avec un flux régulier d'avis authentiques ; une note de 4,3/5 ou plus avec 40 à 50 avis est un bon objectif.",
       },
     ],
   },
