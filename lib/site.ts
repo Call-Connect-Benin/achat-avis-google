@@ -39,6 +39,7 @@ export const mainNav: NavItem[] = [
   { label: "Accueil", href: "/" },
   { label: "Fonctionnalités", href: "/#fonctionnalites" },
   { label: "Blog", href: "/blog" },
+  { label: "Ressources", href: "/ressources" },
   { label: "Tarifs", href: "/tarifs" },
   { label: "Outils", href: "/outils/generateur-avis" },
   { label: "Audit de fiche", href: "/outils/audit-fiche" },

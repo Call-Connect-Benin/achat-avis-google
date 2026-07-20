@@ -138,6 +138,32 @@ export default function SeoLocationPage({
         </div>
       </AnimatedSection>
 
+      {isVille && villeData && villeData.faqs && villeData.faqs.length > 0 && (
+        <AnimatedSection delay={0.35}>
+          <div className="mt-10">
+            <h2 className="text-xl font-semibold text-slate-900">
+              FAQ — Avis Google à {villeData.name}
+            </h2>
+            <div className="mt-4 space-y-3">
+              {villeData.faqs.map((f, i) => (
+                <details
+                  key={i}
+                  className="group rounded-2xl bg-white p-5 shadow-sm transition hover:shadow-md [&_summary::-webkit-details-marker]:hidden"
+                >
+                  <summary className="flex cursor-pointer list-none items-center justify-between font-medium text-slate-900">
+                    {f.question}
+                    <span className="ml-4 text-slate-400 transition-transform group-open:rotate-45">
+                      +
+                    </span>
+                  </summary>
+                  <p className="mt-3 text-sm text-slate-600">{f.answer}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </AnimatedSection>
+      )}
+
       <ContentSections data={contentData} />
 
       <AnimatedSection delay={0.4}>

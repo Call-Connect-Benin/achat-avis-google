@@ -353,6 +353,21 @@ export default function SiteHeader() {
               <span className="absolute inset-x-2 -bottom-0.5 h-0.5 rounded-full bg-blue-600" />
             )}
           </Link>
+          <Link
+            href="/ressources"
+            onMouseEnter={closeAll}
+            onClick={(e) => navClick(e, "/ressources")}
+            className={`relative rounded-xl px-3 py-2 text-sm font-semibold transition-all duration-200 ${
+              isActive("/ressources")
+                ? "text-blue-700"
+                : "text-slate-600 hover:bg-blue-50 hover:text-blue-700"
+            }`}
+          >
+            Ressources
+            {isActive("/ressources") && (
+              <span className="absolute inset-x-2 -bottom-0.5 h-0.5 rounded-full bg-blue-600" />
+            )}
+          </Link>
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
@@ -518,6 +533,16 @@ export default function SiteHeader() {
               </Link>
 
               <Link
+                href="/ressources"
+                onClick={(e) => navClick(e, "/ressources", () => { setOpen(false); closeAll(); })}
+                className={`hidden rounded-xl px-4 py-3 text-base font-semibold transition-all ${
+                  isActive("/ressources") ? "text-blue-700" : "text-slate-700 hover:bg-blue-50"
+                }`}
+              >
+                Ressources
+              </Link>
+
+              <Link
                 href="/tarifs"
                 onClick={(e) => navClick(e, "/tarifs", () => { setOpen(false); closeAll(); })}
                 className={`hidden rounded-xl px-4 py-3 text-base font-semibold transition-all ${
@@ -540,6 +565,7 @@ export default function SiteHeader() {
               <div className="grid grid-cols-2 gap-1">
                 {[
                   { label: "Blog", href: "/blog" },
+                  { label: "Ressources", href: "/ressources" },
                   { label: "Tarifs", href: "/tarifs" },
                 ].map((link) => (
                   <Link

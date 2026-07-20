@@ -19,6 +19,7 @@ const staticPaths = [
   "/outils/audit-fiche",
   "/mentions-legales",
   "/confidentialite",
+  "/ressources",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

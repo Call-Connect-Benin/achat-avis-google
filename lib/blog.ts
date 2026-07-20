@@ -557,6 +557,359 @@ export const articles: Article[] = [
       },
     ],
   },
+  {
+    slug: "comment-repondre-avis-google-negatif-modele",
+    title: "Comment répondre à un avis Google négatif : modèle et exemple",
+    description:
+      "Modèle de réponse à un avis négatif Google, conseils de ton et exemple concret pour transformer une critique en opportunité.",
+    category: "Exemples",
+    date: "2026-07-11",
+    readingTime: "4 min",
+    blocks: [
+      {
+        type: "p",
+        text: "Un avis négatif bien répondu peut rassurer plus qu'un avis positif seul. Les futurs clients lisent d'abord la réponse.",
+      },
+      { type: "h2", text: "Modèle de réponse" },
+      {
+        type: "p",
+        text: "« Bonjour, merci pour votre retour. Nous sommes désolés que votre expérience n'ait pas été à la hauteur. Nous prenons ce point très au sérieux et souhaitons échanger avec vous directement : pouvez-vous nous contacter au [téléphone] ? »",
+      },
+      { type: "h2", text: "Les règles d'or" },
+      {
+        type: "ul",
+        items: [
+          "Restez calme et professionnel, même si le ton est vif.",
+          "Reconnaissez le problème sans être défensif.",
+          "Proposez un canal de résolution privé.",
+          "Répondez sous 24h pour limiter l'impact.",
+        ],
+      },
+      { type: "h2", text: "Ce qu'il faut éviter" },
+      {
+        type: "ul",
+        items: [
+          "Les excuses génériques sans action.",
+          "Les réponses agressives ou argumentatives.",
+          "Les promesses impossibles à tenir.",
+          "Ignorer l'avis en espérant qu'il disparaisse.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Répondre à un avis négatif, c'est montrer que vous êtes à l'écoute. C'est aussi l'occasion de corriger un fait et de renvoyer vers un canal privé.",
+      },
+    ],
+    faq: [
+      {
+        question: "Comment répondre à un avis négatif sur Google ?",
+        answer:
+          "Remerciez le client, reconnaissez le problème sans être défensif, proposez un contact direct et restez professionnel. Répondre sous 24h limite l'impact négatif.",
+      },
+      {
+        question: "Faut-il répondre aux avis négatifs ?",
+        answer:
+          "Oui. Ignorer un avis négatif l'amplifie, tandis qu'une réponse calme et professionnelle est un signal de confiance pour les futurs clients.",
+      },
+    ],
+  },
+  {
+    slug: "generateur-qr-code-avis-google-gratuit",
+    title: "Générateur de QR code avis Google gratuit",
+    description:
+      "Créez un QR code gratuit pour votre fiche Google et facilitez la collecte d'avis en boutique, sur vos factures ou vos cartes de visite.",
+    category: "Outils",
+    date: "2026-07-12",
+    readingTime: "3 min",
+    blocks: [
+      {
+        type: "p",
+        text: "Un QR code d'avis Google transforme n'importe quel support physique en point de collecte. Le client scanne, il est redirigé directement vers le formulaire d'avis.",
+      },
+      { type: "h2", text: "Comment créer votre QR code gratuit" },
+      {
+        type: "p",
+        text: "Copiez votre lien direct d'avis Google (g.page/r/…), collez-le dans notre générateur gratuit, personnalisez les couleurs et téléchargez le QR code en haute résolution.",
+      },
+      { type: "h2", text: "Où l'utiliser" },
+      {
+        type: "ul",
+        items: [
+          "À l'accueil de votre boutique ou sur votre comptoir.",
+          "Sur les tickets de caisse et les factures.",
+          "Dans vos salles d'attente ou sur vos tables.",
+          "Sur vos véhicules ou vos uniformes.",
+          "Dans vos campagnes e-mailing et sur vos flyers.",
+        ],
+      },
+      { type: "h2", text: "Bonnes pratiques" },
+      {
+        type: "p",
+        text: "Testez le QR code avant impression. Vérifiez qu'il ouvre bien le formulaire d'avis. Ajoutez un call-to-action clair : « Laissez votre avis ».",
+      },
+    ],
+  },
+  {
+    slug: "audit-fiche-google-gratuit-en-ligne",
+    title: "Audit de fiche Google gratuit en ligne",
+    description:
+      "Réalisez un diagnostic gratuit de votre fiche Google en 2 minutes. Note, volume, régularité : identifiez vos points d'amélioration.",
+    category: "Outils",
+    date: "2026-07-13",
+    readingTime: "3 min",
+    blocks: [
+      {
+        type: "p",
+        text: "Un audit de fiche Google ne doit pas être un bilan moral mais un diagnostic actionnable. Voici les 5 indicateurs à surveiller.",
+      },
+      { type: "h2", text: "Les 5 indicateurs clés" },
+      {
+        type: "ul",
+        items: [
+          "Note moyenne : visez 4,3/5 ou plus.",
+          "Volume : un minimum de 40 à 50 avis pour être crédible localement.",
+          "Régularité : des avis publiés chaque mois, pas par à-coups.",
+          "Taux de réponse : 100% des avis traités.",
+          "Mots-clés : présence de votre métier et de votre ville dans les avis.",
+        ],
+      },
+      { type: "h2", text: "Comment utiliser notre outil" },
+      {
+        type: "p",
+        text: "Entrez le nom de votre entreprise et votre ville. Notre outil analyse votre fiche en quelques secondes et vous donne un score de maturité avec des recommandations personnalisées.",
+      },
+      { type: "h2", text: "Après l'audit" },
+      {
+        type: "p",
+        text: "Appliquez les recommandations, suivez vos progrès et recommencez l'audit chaque trimestre pour mesurer votre évolution.",
+      },
+    ],
+  },
+  {
+    slug: "pourquoi-avis-google-sont-disparus",
+    title: "Pourquoi mes avis Google ont disparu ?",
+    description:
+      "Avis Google supprimés, filtrés ou non publiés : les causes possibles et les actions à entreprendre pour restaurer votre réputation.",
+    category: "Problèmes",
+    date: "2026-07-14",
+    readingTime: "5 min",
+    blocks: [
+      {
+        type: "p",
+        text: "Vos avis Google baissent ou disparaissent sans raison apparente ? Plusieurs explications existent, et des actions sont possibles.",
+      },
+      { type: "h2", text: "Les causes fréquentes" },
+      {
+        type: "ul",
+        items: [
+          "Avis non conformes aux règles Google (fake, rémunérés, hors sujet).",
+          "Avis signalés par d'autres utilisateurs et modérés.",
+          "Problème technique temporaire sur la fiche.",
+          "Changement de nom ou de catégorie de la fiche.",
+          "Fusion de fiches Google Business Profile.",
+        ],
+      },
+      { type: "h2", text: "Que faire ?" },
+      {
+        type: "p",
+        text: "Vérifiez d'abord que les avis respectent les règles. Si la suppression vous semble injustifiée, vous pouvez signaler le problème via le centre d'aide Google. Conservez vos preuves : captures d'écran, liens, témoignages.",
+      },
+      {
+        type: "p",
+        text: "Notre outil d'audit de fiche peut vous aider à détecter les anomalies et à restaurer votre réputation.",
+      },
+    ],
+    faq: [
+      {
+        question: "Pourquoi Google supprime-t-il des avis ?",
+        answer:
+          "Google supprime les avis qui violent ses règles : avis fictifs, rémunérés, diffamatoires, sans lien avec l'établissement, ou signalés comme abusifs par d'autres utilisateurs.",
+      },
+      {
+        question: "Combien de temps faut-il pour récupérer des avis supprimés ?",
+        answer:
+          "Si la suppression est injustifiée, vous pouvez faire appel via le centre d'aide Google. Le délai varie de quelques jours à plusieurs semaines. En attendant, concentrez-vous sur la collecte de nouveaux avis authentiques.",
+      },
+    ],
+  },
+  {
+    slug: "comment-augmenter-note-google-rapidement",
+    title: "Comment augmenter sa note Google rapidement",
+    description:
+      "Méthodes conformes pour améliorer votre note Google en 30 jours : collecte ciblée, réponses aux avis et optimisation de la fiche.",
+    category: "Guide",
+    date: "2026-07-15",
+    readingTime: "5 min",
+    blocks: [
+      {
+        type: "p",
+        text: "Améliorer votre note Google demande une stratégie, pas des astuces miracles. Voici les leviers les plus efficaces en 30 jours.",
+      },
+      { type: "h2", text: "1. Collectez plus d'avis" },
+      {
+        type: "p",
+        text: "Demandez l'avis juste après une expérience positive. Utilisez un lien direct ou un QR code. Plus vous avez d'avis récents, plus votre note monte vite.",
+      },
+      { type: "h2", text: "2. Répondez à tous les avis" },
+      {
+        type: "p",
+        text: "Répondez aux avis négatifs avec professionnalisme et aux avis positifs avec remerciement. Cela montre que vous êtes actif et attentif.",
+      },
+      { type: "h2", text: "3. Optimisez votre fiche" },
+      {
+        type: "ul",
+        items: [
+          "Complétez toutes les sections : horaires, services, photos.",
+          "Ajoutez des mots-clés pertinents dans la description.",
+          "Publiez des posts réguliers pour rester visible.",
+        ],
+      },
+      { type: "h2", text: "4. Utilisez des outils" },
+      {
+        type: "p",
+        text: "Notre générateur de QR code et notre outil d'audit vous aident à structurer votre collecte et à suivre vos progrès.",
+      },
+    ],
+    faq: [
+      {
+        question: "Combien de temps faut-il pour augmenter sa note Google ?",
+        answer:
+          "Avec une collecte régulière d'avis authentiques, vous pouvez voir une amélioration de votre note en 2 à 4 semaines. La clé est la régularité, pas le volume ponctuel.",
+      },
+      {
+        question: "Est-ce que acheter des avis fait monter la note ?",
+        answer:
+          "Non, c'est risqué. Google détecte les avis frauduleux et peut supprimer votre fiche. Préférez une collecte auprès de vrais clients.",
+      },
+    ],
+  },
+  {
+    slug: "collecte-avis-restaurant-exemple",
+    title: "Collecte d'avis restaurant : exemple et méthode",
+    description:
+      "Exemple concret de collecte d'avis pour un restaurant : message SMS, QR code, moment idéal et bonnes pratiques pour augmenter votre note.",
+    category: "Exemples",
+    date: "2026-07-16",
+    readingTime: "4 min",
+    blocks: [
+      {
+        type: "p",
+        text: "Dans la restauration, chaque avis compte. Une note élevée et des commentaires réguliers influencent directement le choix des clients potentiels.",
+      },
+      { type: "h2", text: "Le meilleur moment pour demander" },
+      {
+        type: "p",
+        text: "Demandez l'avis juste après le repas, quand l'expérience est encore fraîche. Le client est satisfait et plus enclin à laisser un avis positif.",
+      },
+      { type: "h2", text: "Exemple de message SMS" },
+      {
+        type: "p",
+        text: "« Bonjour {prénom}, merci pour votre passage au [Restaurant] ! Si vous avez apprécié votre repas, laissez-nous votre avis Google : {lien}. Cela nous aide énormément. Bonne journée ! »",
+      },
+      { type: "h2", text: "Où placer le QR code" },
+      {
+        type: "ul",
+        items: [
+          "Sur l'addition ou le ticket de caisse.",
+          "Au comptoir ou à l'entrée.",
+          "Sur les tables avec un sticker « Laissez votre avis ».",
+          "Sur les menus ou les ardoises.",
+        ],
+      },
+      { type: "h2", text: "Résultat attendu" },
+      {
+        type: "p",
+        text: "Un restaurant qui met en place une collecte systématique peut passer de 10 à 50 avis en 2 mois, avec une note moyenne qui monte de 4,0 à 4,5/5.",
+      },
+    ],
+  },
+  {
+    slug: "e-reputation-entreprise-guide-complet",
+    title: "E-réputation entreprise : guide complet 2026",
+    description:
+      "Guide complet pour gérer votre e-réputation d'entreprise : audit, collecte d'avis, réponse, monitoring et stratégie globale.",
+    category: "Guide",
+    date: "2026-07-17",
+    readingTime: "7 min",
+    blocks: [
+      {
+        type: "p",
+        text: "Votre e-réputation est un actif stratégique. Ce guide vous donne les étapes pour la construire, la surveiller et la protéger.",
+      },
+      { type: "h2", text: "Étape 1 : Auditez votre présence" },
+      {
+        type: "p",
+        text: "Listez toutes les plateformes où votre entreprise est présente : Google, Trustpilot, Pages Jaunes, réseaux sociaux. Notez votre note moyenne, le volume d'avis et la régularité des réponses.",
+      },
+      { type: "h2", text: "Étape 2 : Collectez des avis authentiques" },
+      {
+        type: "p",
+        text: "Mettez en place un système de collecte : lien direct, QR code, SMS, email. Demandez l'avis juste après une expérience positive.",
+      },
+      { type: "h2", text: "Étape 3 : Répondez systématiquement" },
+      {
+        type: "p",
+        text: "Répondez à tous les avis, positifs comme négatifs. Une réponse personnalisée renforce la confiance et encourage d'autres avis.",
+      },
+      { type: "h2", text: "Étape 4 : Surveillez et analysez" },
+      {
+        type: "p",
+        text: "Utilisez des outils de monitoring pour détecter les nouveaux avis, les pics de mentions négatives et les tendances. Alertes et rapports mensuels vous aident à anticiper.",
+      },
+      { type: "h2", text: "Étape 5 : Améliorez en continu" },
+      {
+        type: "p",
+        text: "Identifiez les points forts et les axes d'amélioration dans les avis. Formez votre équipe, ajustez vos processus et mesurez l'impact.",
+      },
+    ],
+    faq: [
+      {
+        question: "Qu'est-ce que l'e-réputation pour une entreprise ?",
+        answer:
+          "L'e-réputation est l'image et la notoriété d'une entreprise sur internet, principalement basées sur les avis clients, les commentaires et les mentions sur les réseaux sociaux et les plateformes d'avis.",
+      },
+      {
+        question: "Comment mesurer l'e-réputation de mon entreprise ?",
+        answer:
+          "Mesurez votre note moyenne, le volume d'avis, le taux de réponse, le sentiment des commentaires et votre position dans le pack local Google. Un audit de fiche gratuit peut vous aider.",
+      },
+    ],
+  },
+  {
+    slug: "demande-avis-google-par-whatsapp",
+    title: "Demande d'avis Google par WhatsApp : méthode et exemple",
+    description:
+      "Utilisez WhatsApp pour demander un avis Google à vos clients : modèle de message, bonnes pratiques et taux de réponse.",
+    category: "Guide",
+    date: "2026-07-18",
+    readingTime: "4 min",
+    blocks: [
+      {
+        type: "p",
+        text: "WhatsApp est un canal personnel et direct pour demander un avis. Un message court et personnalisé peut générer un taux de réponse élevé.",
+      },
+      { type: "h2", text: "Modèle de message WhatsApp" },
+      {
+        type: "p",
+        text: "« Bonjour {prénom}, merci pour votre confiance ! Si vous avez apprécié votre {prestation}, un petit avis sur Google nous aiderait beaucoup : {lien}. Merci ! »",
+      },
+      { type: "h2", text: "Bonnes pratiques" },
+      {
+        type: "ul",
+        items: [
+          "Envoyez le message dans l'heure qui suit la prestation.",
+          "Personnalisez avec le prénom et le contexte.",
+          "Restez concis : une phrase suffit.",
+          "Proposez le lien direct pour réduire les frictions.",
+        ],
+      },
+      { type: "h2", text: "Taux de réponse attendu" },
+      {
+        type: "p",
+        text: "Un message WhatsApp personnalisé peut générer un taux de réponse de 20 à 35%, contre 5 à 10% pour un email générique.",
+      },
+    ],
+  },
 ];
 
 export function getArticle(slug: string): Article | undefined {
