@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import { site } from "@/lib/site";
 import Logo from "@/components/logo";
@@ -187,6 +187,7 @@ export default function SiteHeader() {
   const [secteurOpen, setSecteurOpen] = useState(false);
   const [villeOpen, setVilleOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
@@ -227,6 +228,12 @@ export default function SiteHeader() {
     }, 150);
   };
 
+  const handleHomeClick = () => {
+    if (pathname === "/") {
+      router.refresh();
+    }
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -254,6 +261,7 @@ export default function SiteHeader() {
           <Link
             href="/"
             onMouseEnter={closeAll}
+            onClick={handleHomeClick}
             className={`relative rounded-xl px-3 py-2 text-sm font-semibold transition-all duration-200 ${
               isActive("/")
                 ? "text-blue-700"
@@ -388,7 +396,7 @@ export default function SiteHeader() {
 
               <Link
                 href="/"
-                onClick={() => { setOpen(false); closeAll(); }}
+                onClick={() => { handleHomeClick(); setOpen(false); closeAll(); }}
                 className={`rounded-xl px-4 py-3 text-base font-semibold transition-all ${
                   isActive("/") ? "text-blue-700" : "text-slate-700 hover:bg-blue-50"
                 }`}
