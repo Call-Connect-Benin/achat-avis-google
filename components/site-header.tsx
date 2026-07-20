@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import { site } from "@/lib/site";
 import Logo from "@/components/logo";
@@ -54,7 +54,7 @@ const villeLinks = [
   { label: "Montpellier", href: "/france/montpellier" },
 ];
 
-function MegaDropdown({ title, links, isOpen }: { title: string; links: { label: string; href: string }[]; isOpen: boolean }) {
+function MegaDropdown({ title, links, isOpen, onNavClick }: { title: string; links: { label: string; href: string }[]; isOpen: boolean; onNavClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void }) {
   return (
     <div className="relative">
       <button
@@ -74,6 +74,7 @@ function MegaDropdown({ title, links, isOpen }: { title: string; links: { label:
             <Link
               key={link.href}
               href={link.href}
+              onClick={(e) => onNavClick?.(e, link.href)}
               className="block rounded-xl px-4 py-2.5 text-sm font-medium text-slate-700 transition hover:bg-blue-50 hover:text-blue-700"
             >
               {link.label}
@@ -85,7 +86,7 @@ function MegaDropdown({ title, links, isOpen }: { title: string; links: { label:
   );
 }
 
-function MegaDropdownMulti({ title, columns, isOpen }: { title: string; columns: { title: string; links: { label: string; href: string }[] }[]; isOpen: boolean }) {
+function MegaDropdownMulti({ title, columns, isOpen, onNavClick }: { title: string; columns: { title: string; links: { label: string; href: string }[] }[]; isOpen: boolean; onNavClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void }) {
   return (
     <div className="relative">
       <button
@@ -109,6 +110,7 @@ function MegaDropdownMulti({ title, columns, isOpen }: { title: string; columns:
                   <Link
                     key={link.href}
                     href={link.href}
+                    onClick={(e) => onNavClick?.(e, link.href)}
                     className="block rounded-xl px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-blue-50 hover:text-blue-700"
                   >
                     {link.label}
@@ -130,6 +132,7 @@ function MobileMenuAccordion({
   isOpen,
   onToggle,
   onNavigate,
+  onNavClick,
 }: {
   id: string;
   title: string;
@@ -137,6 +140,7 @@ function MobileMenuAccordion({
   isOpen: boolean;
   onToggle: () => void;
   onNavigate: () => void;
+  onNavClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
 }) {
   return (
     <div className="rounded-xl border border-blue-100 bg-white/70">
@@ -167,7 +171,10 @@ function MobileMenuAccordion({
             <Link
               key={link.href}
               href={link.href}
-              onClick={onNavigate}
+              onClick={(e) => {
+                onNavClick?.(e, link.href);
+                onNavigate();
+              }}
               className="rounded-lg px-3 py-2.5 text-sm font-medium text-slate-600 transition hover:bg-blue-50 hover:text-blue-700"
             >
               {link.label}
@@ -187,7 +194,6 @@ export default function SiteHeader() {
   const [secteurOpen, setSecteurOpen] = useState(false);
   const [villeOpen, setVilleOpen] = useState(false);
   const pathname = usePathname();
-  const router = useRouter();
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
@@ -228,10 +234,31 @@ export default function SiteHeader() {
     }, 150);
   };
 
+  const getBasePath = (href: string) => href.split("?")[0].split("#")[0];
+
+  const isSamePage = (href: string) => {
+    const base = getBasePath(href);
+    if (base === "/") return pathname === "/";
+    return pathname === base || pathname.startsWith(`${base}/`);
+  };
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, onNavigate?: () => void) => {
+    if (isSamePage(href)) {
+      e.preventDefault();
+      window.location.href = href;
+    } else if (onNavigate) {
+      onNavigate();
+    }
+  };
+
   const handleHomeClick = () => {
     if (pathname === "/") {
-      router.refresh();
+      window.location.href = "/";
     }
+  };
+
+  const navClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, onNavigate?: () => void) => {
+    handleNavClick(e, href, onNavigate);
   };
 
   return (
@@ -243,7 +270,7 @@ export default function SiteHeader() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
-        <Link href="/" className="flex items-center gap-3 font-semibold group">
+        <Link href="/" onClick={handleHomeClick} className="flex items-center gap-3 font-semibold group">
           <div className="relative">
             <Logo className="relative h-11 w-11 transition-transform duration-300 group-hover:scale-110" />
           </div>
@@ -277,6 +304,7 @@ export default function SiteHeader() {
           <Link
             href="/services"
             onMouseEnter={closeAll}
+            onClick={(e) => navClick(e, "/services")}
             className={`relative rounded-xl px-3 py-2 text-sm font-semibold transition-all duration-200 ${
               isActive("/services")
                 ? "text-blue-700"
@@ -293,26 +321,27 @@ export default function SiteHeader() {
             onMouseEnter={() => handleMouseEnter(setMethodGestionOpen)}
             onMouseLeave={() => handleMouseLeave(setMethodGestionOpen)}
           >
-            <MegaDropdownMulti title="Méthodes & Gestion" isOpen={methodGestionOpen} columns={[{ title: "Méthodes", links: methodLinks }, { title: "Gestion", links: gestionLinks }]} />
+            <MegaDropdownMulti title="Méthodes & Gestion" isOpen={methodGestionOpen} columns={[{ title: "Méthodes", links: methodLinks }, { title: "Gestion", links: gestionLinks }]} onNavClick={navClick} />
           </div>
 
           <div
             onMouseEnter={() => handleMouseEnter(setSecteurOpen)}
             onMouseLeave={() => handleMouseLeave(setSecteurOpen)}
           >
-            <MegaDropdown title="Secteurs" links={secteurLinks} isOpen={secteurOpen} />
+            <MegaDropdown title="Secteurs" links={secteurLinks} isOpen={secteurOpen} onNavClick={navClick} />
           </div>
 
           <div
             onMouseEnter={() => handleMouseEnter(setVilleOpen)}
             onMouseLeave={() => handleMouseLeave(setVilleOpen)}
           >
-            <MegaDropdown title="Villes" links={villeLinks} isOpen={villeOpen} />
+            <MegaDropdown title="Villes" links={villeLinks} isOpen={villeOpen} onNavClick={navClick} />
           </div>
 
           <Link
             href="/blog"
             onMouseEnter={closeAll}
+            onClick={(e) => navClick(e, "/blog")}
             className={`relative rounded-xl px-3 py-2 text-sm font-semibold transition-all duration-200 ${
               isActive("/blog")
                 ? "text-blue-700"
@@ -380,14 +409,14 @@ export default function SiteHeader() {
                 </Link>
                 <Link
                   href="/contact"
-                  onClick={() => { setOpen(false); closeAll(); }}
+                  onClick={(e) => navClick(e, "/contact", () => { setOpen(false); closeAll(); })}
                   className="rounded-full bg-blue-600 px-5 py-3 text-center font-semibold text-white"
                 >
                   Nous contacter
                 </Link>
                 <Link
                   href="/tarifs"
-                  onClick={() => { setOpen(false); closeAll(); }}
+                  onClick={(e) => navClick(e, "/tarifs", () => { setOpen(false); closeAll(); })}
                   className="rounded-full border border-blue-300 bg-white px-5 py-3 text-center font-semibold text-slate-700"
                 >
                   Voir les tarifs
@@ -396,7 +425,7 @@ export default function SiteHeader() {
 
               <Link
                 href="/"
-                onClick={() => { handleHomeClick(); setOpen(false); closeAll(); }}
+                onClick={(e) => navClick(e, "/", () => { setOpen(false); closeAll(); })}
                 className={`rounded-xl px-4 py-3 text-base font-semibold transition-all ${
                   isActive("/") ? "text-blue-700" : "text-slate-700 hover:bg-blue-50"
                 }`}
@@ -405,7 +434,7 @@ export default function SiteHeader() {
               </Link>
               <Link
                 href="/services"
-                onClick={() => { setOpen(false); closeAll(); }}
+                onClick={(e) => navClick(e, "/services", () => { setOpen(false); closeAll(); })}
                 className={`rounded-xl px-4 py-3 text-base font-semibold transition-all ${
                   isActive("/services") ? "text-blue-700" : "text-slate-700 hover:bg-blue-50"
                 }`}
@@ -421,7 +450,7 @@ export default function SiteHeader() {
                       <Link
                         key={link.href}
                         href={link.href}
-                        onClick={() => { setOpen(false); closeAll(); }}
+                        onClick={(e) => navClick(e, link.href, () => { setOpen(false); closeAll(); })}
                         className="rounded-xl px-3 py-2 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-700"
                       >
                         {link.label}
@@ -436,7 +465,7 @@ export default function SiteHeader() {
                       <Link
                         key={link.href}
                         href={link.href}
-                        onClick={() => { setOpen(false); closeAll(); }}
+                        onClick={(e) => navClick(e, link.href, () => { setOpen(false); closeAll(); })}
                         className="rounded-xl px-3 py-2 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-700"
                       >
                         {link.label}
@@ -453,7 +482,7 @@ export default function SiteHeader() {
                     <Link
                       key={link.href}
                       href={link.href}
-                      onClick={() => { setOpen(false); closeAll(); }}
+                      onClick={(e) => navClick(e, link.href, () => { setOpen(false); closeAll(); })}
                       className="rounded-xl px-4 py-2.5 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-700"
                     >
                       {link.label}
@@ -469,7 +498,7 @@ export default function SiteHeader() {
                     <Link
                       key={link.href}
                       href={link.href}
-                      onClick={() => { setOpen(false); closeAll(); }}
+                      onClick={(e) => navClick(e, link.href, () => { setOpen(false); closeAll(); })}
                       className="rounded-xl px-4 py-2.5 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-700"
                     >
                       {link.label}
@@ -480,7 +509,7 @@ export default function SiteHeader() {
 
               <Link
                 href="/blog"
-                onClick={() => { setOpen(false); closeAll(); }}
+                onClick={(e) => navClick(e, "/blog", () => { setOpen(false); closeAll(); })}
                 className={`hidden rounded-xl px-4 py-3 text-base font-semibold transition-all ${
                   isActive("/blog") ? "text-blue-700" : "text-slate-700 hover:bg-blue-50"
                 }`}
@@ -490,7 +519,7 @@ export default function SiteHeader() {
 
               <Link
                 href="/tarifs"
-                onClick={() => { setOpen(false); closeAll(); }}
+                onClick={(e) => navClick(e, "/tarifs", () => { setOpen(false); closeAll(); })}
                 className={`hidden rounded-xl px-4 py-3 text-base font-semibold transition-all ${
                   isActive("/tarifs") ? "text-blue-700" : "text-slate-700 hover:bg-blue-50"
                 }`}
@@ -500,7 +529,7 @@ export default function SiteHeader() {
 
               <Link
                 href="/contact"
-                onClick={() => { setOpen(false); closeAll(); }}
+                onClick={(e) => navClick(e, "/contact", () => { setOpen(false); closeAll(); })}
                 className={`hidden rounded-xl px-4 py-3 text-base font-semibold transition-all ${
                   isActive("/contact") ? "text-blue-700" : "text-slate-700 hover:bg-blue-50"
                 }`}
@@ -516,7 +545,7 @@ export default function SiteHeader() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    onClick={closeMenu}
+                    onClick={(e) => navClick(e, link.href, closeMenu)}
                     className={`rounded-xl px-4 py-3 text-base font-semibold transition-all ${
                       isActive(link.href) ? "bg-blue-50 text-blue-700" : "text-slate-700 hover:bg-blue-50"
                     }`}
@@ -526,10 +555,10 @@ export default function SiteHeader() {
                 ))}
               </div>
 
-              <MobileMenuAccordion id="methodes" title="Méthodes" links={methodLinks} isOpen={mobileSection === "methodes"} onToggle={() => setMobileSection((section) => section === "methodes" ? null : "methodes")} onNavigate={closeMenu} />
-              <MobileMenuAccordion id="gestion" title="Gestion des avis" links={gestionLinks} isOpen={mobileSection === "gestion"} onToggle={() => setMobileSection((section) => section === "gestion" ? null : "gestion")} onNavigate={closeMenu} />
-              <MobileMenuAccordion id="secteurs" title="Secteurs" links={secteurLinks} isOpen={mobileSection === "secteurs"} onToggle={() => setMobileSection((section) => section === "secteurs" ? null : "secteurs")} onNavigate={closeMenu} />
-              <MobileMenuAccordion id="villes" title="Villes" links={villeLinks} isOpen={mobileSection === "villes"} onToggle={() => setMobileSection((section) => section === "villes" ? null : "villes")} onNavigate={closeMenu} />
+              <MobileMenuAccordion id="methodes" title="Méthodes" links={methodLinks} isOpen={mobileSection === "methodes"} onToggle={() => setMobileSection((section) => section === "methodes" ? null : "methodes")} onNavigate={closeMenu} onNavClick={navClick} />
+              <MobileMenuAccordion id="gestion" title="Gestion des avis" links={gestionLinks} isOpen={mobileSection === "gestion"} onToggle={() => setMobileSection((section) => section === "gestion" ? null : "gestion")} onNavigate={closeMenu} onNavClick={navClick} />
+              <MobileMenuAccordion id="secteurs" title="Secteurs" links={secteurLinks} isOpen={mobileSection === "secteurs"} onToggle={() => setMobileSection((section) => section === "secteurs" ? null : "secteurs")} onNavigate={closeMenu} onNavClick={navClick} />
+              <MobileMenuAccordion id="villes" title="Villes" links={villeLinks} isOpen={mobileSection === "villes"} onToggle={() => setMobileSection((section) => section === "villes" ? null : "villes")} onNavigate={closeMenu} onNavClick={navClick} />
 
               <div className="hidden border-t border-blue-100 pt-3">
                 <Link
