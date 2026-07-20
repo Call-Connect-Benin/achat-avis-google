@@ -3,7 +3,7 @@ import AnimatedSection from "@/components/animated-section";
 import ContentSections from "@/components/content-sections";
 import { getContentSections } from "@/lib/content-sections";
 import Link from "next/link";
-import { CheckCircle2, ArrowRight, Star, Mail } from "lucide-react";
+import { Star, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Fonctionnement du service",

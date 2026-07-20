@@ -3,6 +3,7 @@ import AnimatedSection from "@/components/animated-section";
 import SectionHeading from "@/components/section-heading";
 import ContentSections from "@/components/content-sections";
 import { getContentSections } from "@/lib/content-sections";
+import { villeDataFromSlug } from "@/lib/villes-data";
 
 const platforms = ["Google", "Trustpilot", "Facebook", "Pages Jaunes"];
 
@@ -26,6 +27,8 @@ export default function SeoLocationPage({
     ? `À ${name}, la concurrence sur le pack local Google Maps est intense. Un volume d'avis authentiques et une bonne note moyenne font souvent la différence entre deux enseignes voisines.`
     : `En tant que ${name}, votre réputation en ligne conditionne une grande part de vos nouveaux clients. Des avis réguliers et authentiques renforcent la confiance et améliorent votre visibilité dans les recherches locales.`;
 
+  const villeData = isVille && slug ? villeDataFromSlug(slug) : undefined;
+
   const contentData = getContentSections(context, name, {
     slug,
     site: name,
@@ -46,6 +49,32 @@ export default function SeoLocationPage({
           subtitle={intro}
         />
       </AnimatedSection>
+
+      {isVille && villeData && (
+        <AnimatedSection delay={0.05}>
+          <div className="mt-10 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">Spécificités de {villeData.name}</p>
+            <div className="mt-3 grid gap-4 md:grid-cols-3">
+              <div>
+                <p className="text-sm font-medium text-slate-900">Population</p>
+                <p className="text-sm text-slate-600">{villeData.population}</p>
+              </div>
+              <div>
+                <p className="text-sm font-medium text-slate-900">Forces locales</p>
+                <p className="text-sm text-slate-600">{villeData.specialty}</p>
+              </div>
+              <div>
+                <p className="text-sm font-medium text-slate-900">Conseil local</p>
+                <p className="text-sm text-slate-600">{villeData.localTip}</p>
+              </div>
+            </div>
+            <div className="mt-4 rounded-xl bg-slate-50 p-4">
+              <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">Exemple concret</p>
+              <p className="mt-1 text-sm text-slate-700">{villeData.exampleBusiness}</p>
+            </div>
+          </div>
+        </AnimatedSection>
+      )}
 
       <AnimatedSection delay={0.1}>
         <div className="mt-10 space-y-5 text-slate-700">

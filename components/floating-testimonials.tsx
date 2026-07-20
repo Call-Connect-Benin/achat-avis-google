@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useAnimation, useInView } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import Image from "next/image";
 import { Star } from "lucide-react";
 
 const testimonials = [
@@ -97,10 +98,11 @@ export default function FloatingTestimonials() {
             >
               <div className="flex items-start gap-3">
                 <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full ring-2 ring-sky-100">
-                  <img
+                  <Image
                     src={t.image}
                     alt={t.name}
-                    className="h-full w-full object-cover"
+                    fill
+                    className="object-cover"
                   />
                 </div>
                 <div className="flex-1 min-w-0">

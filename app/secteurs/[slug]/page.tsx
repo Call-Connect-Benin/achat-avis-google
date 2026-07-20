@@ -903,6 +903,56 @@ export default async function SecteurPage({
         </div>
       </section>
 
+      <section className="bg-blue-50 py-16 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AnimatedSection className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+              Chiffres clés et contexte {secteur.title.toLowerCase()}
+            </h2>
+            <p className="mt-4 text-lg text-slate-600">
+              Ce qui distingue votre activité et pourquoi les avis Google sont déterminants dans votre secteur.
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.1}>
+            <div className="mx-auto mt-12 max-w-3xl rounded-3xl border border-blue-200 bg-white p-8 shadow-sm">
+              <div className="grid gap-6 md:grid-cols-2">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-wider text-blue-700">Impact local</p>
+                  <p className="mt-2 text-base text-slate-700">
+                    {secteur.slug === "avis-google-restaurant" && "Plus de 80% des consommateurs consultent les avis avant de réserver une table. Une note de 4,5/5 ou plus peut augmenter les réservations de 30%."}
+                    {secteur.slug === "avis-google-artisan" && "Les artisans avec plus de 40 avis et une note supérieure à 4,3/5 génèrent 2 fois plus de demandes de devis que ceux qui ont moins de 10 avis."}
+                    {secteur.slug === "avis-google-garage" && "La confiance est le premier critère de choix pour 78% des automobilistes. Une note élevée et des avis récents fidélisent la clientèle existante."}
+                    {secteur.slug === "avis-google-hotel" && "Les voyageurs qui consultent les avis réservent 3 fois plus souvent. Une note de 4,4/5 ou plus place votre établissement en tête des résultats Google Travel."}
+                    {secteur.slug === "avis-google-agence-immobiliere" && "Les agences bien notées reçoivent 2,5 fois plus de mandats. Les avis détaillés sur l'accompagnement renforcent la crédibilité des transactions."}
+                    {secteur.slug === "avis-google-salon-coiffure" && "Les avis Google sont le premier critère de choix pour 65% des nouveaux clients. Une note de 4,6/5 ou plus attire 40% de nouveaux clients supplémentaires."}
+                    {secteur.slug === "avis-google-institut-beaute" && "Les instituts avec plus de 30 avis et une note supérieure à 4,4/5 voient leur fréquentation augmenter de 35% en moyenne."}
+                    {secteur.slug === "avis-google-cabinet-dentaire" && "92% des patients lisent les avis avant de choisir un dentiste. Une note élevée et des témoignages détaillés réduisent l'anxiété avant la première consultation."}
+                    {secteur.slug === "avis-google-commerce" && "Les commerces avec plus de 50 avis et une note de 4,3/5 ou plus voient leur fréquentation augmenter de 25% en moyenne."}
+                    {secteur.slug === "avis-google-entreprise-btp" && "Les entreprises du BTP avec une note supérieure à 4,5/5 et plus de 30 avis remportent 2 fois plus d'appels d'offres que la concurrence."}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-wider text-blue-700">Conseil secteur</p>
+                  <p className="mt-2 text-base text-slate-700">
+                    {secteur.slug === "avis-google-restaurant" && "Demandez l'avis au moment du dessert, quand l'expérience est encore fraîche. Répondez à tous les commentaires, même les plus critiques : les futurs clients lisent d'abord la réponse."}
+                    {secteur.slug === "avis-google-artisan" && "Partagez des photos de vos réalisations sur votre fiche Google. Les avis accompagnés de visuels génèrent 2 fois plus de confiance et de demandes de devis."}
+                    {secteur.slug === "avis-google-garage" && "Soyez transparent sur vos tarifs et vos diagnostics. Les avis qui mentionnent la clarté des prix et la qualité des réparations sont les plus partagés."}
+                    {secteur.slug === "avis-google-hotel" && "Répondez aux avis dans la langue du client. Une réponse personnalisée en anglais, espagnol ou allemand augmente la confiance des voyageurs internationaux."}
+                    {secteur.slug === "avis-google-agence-immobiliere" && "Valorisez chaque transaction réussie : un avis post-vente ou post-achat est la preuve la plus forte de votre accompagnement. Ajoutez des photos de biens vendus sur votre fiche."}
+                    {secteur.slug === "avis-google-salon-coiffure" && "Partagez vos meilleurs avis sur Instagram et TikTok. Les avis visuels et les témoignages vidéo génèrent 3 fois plus d'engagement et de nouveaux clients."}
+                    {secteur.slug === "avis-google-institut-beaute" && "Proposez des soins signature et documentez les résultats avec l'accord des clientes. Un avant/après photo (avec autorisation) renforce la confiance des nouvelles clientes."}
+                    {secteur.slug === "avis-google-cabinet-dentaire" && "Soyez transparent sur vos tarifs et vos spécialités. Les avis qui mentionnent l'écoute, la douceur et la clarté des explications sont les plus rassurants pour les nouveaux patients."}
+                    {secteur.slug === "avis-google-commerce" && "Mettez en avant vos produits populaires dans les avis. Un avis qui mentionne un produit spécifique enrichit votre fiche et aide les futurs clients dans leur choix."}
+                    {secteur.slug === "avis-google-entreprise-btp" && "Documentez vos chantiers avec des photos avant/pendant/après. Les avis qui mentionnent la qualité des finitions et le respect des délais renforcent votre réputation et génèrent des recommandations."}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       <ContentSections
         data={getContentSections("secteur", secteur.title, {
           slug: secteur.slug,

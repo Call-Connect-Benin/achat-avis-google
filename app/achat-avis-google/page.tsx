@@ -3,7 +3,7 @@ import AnimatedSection from "@/components/animated-section";
 import ContentSections from "@/components/content-sections";
 import { getContentSections } from "@/lib/content-sections";
 import Link from "next/link";
-import { Shield, Star, CheckCircle2, ArrowRight, AlertTriangle } from "lucide-react";
+import { Shield, Star, CheckCircle2, AlertTriangle } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Achat avis Google : risques et alternatives",

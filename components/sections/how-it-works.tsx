@@ -60,7 +60,7 @@ export default function HowItWorks() {
       </AnimatedSection>
 
       <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        {steps.map((step, i) => (
+        {steps.map((step) => (
           <AnimatedSection key={step.n} delay={step.n * 0.1}>
             <div className="flex h-full flex-col rounded-2xl bg-blue-50 p-6 transition hover:bg-blue-100">
               <div className="grid h-10 w-10 place-items-center rounded-full bg-blue-100 text-sm font-bold text-blue-700">

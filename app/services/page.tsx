@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { site } from "@/lib/site";
 import AnimatedSection from "@/components/animated-section";
 import Link from "next/link";
 import { CheckCircle2, Star, TrendingUp, Shield, Mail, MessageSquare } from "lucide-react";

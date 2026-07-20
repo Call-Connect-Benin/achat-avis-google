@@ -3,7 +3,7 @@ import AnimatedSection from "@/components/animated-section";
 import ContentSections from "@/components/content-sections";
 import { getContentSections } from "@/lib/content-sections";
 import Link from "next/link";
-import { CheckCircle2, Star, ArrowRight, Mail, Shield } from "lucide-react";
+import { CheckCircle2, Star, ArrowRight, Shield } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Gestion de réputation en ligne",

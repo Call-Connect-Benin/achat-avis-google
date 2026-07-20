@@ -1,5 +1,6 @@
 import AnimatedSection from "@/components/animated-section";
 import SectionHeading from "@/components/section-heading";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, TrendingUp } from "lucide-react";
 
@@ -56,10 +57,11 @@ export default function CaseStudies() {
                 className="group flex flex-col rounded-2xl bg-sky-50 overflow-hidden transition hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-sky-100">
-                  <img
+                  <Image
                     src={c.image}
                     alt={c.title}
-                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                    fill
+                    className="object-cover transition duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">

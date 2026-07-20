@@ -3,7 +3,7 @@ import AnimatedSection from "@/components/animated-section";
 import ContentSections from "@/components/content-sections";
 import { getContentSections } from "@/lib/content-sections";
 import Link from "next/link";
-import { Mail, Star, CheckCircle2, ArrowRight, TrendingUp } from "lucide-react";
+import { Mail, Star, CheckCircle2, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Collecte d'avis Google",

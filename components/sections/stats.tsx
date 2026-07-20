@@ -1,5 +1,4 @@
 import AnimatedSection from "@/components/animated-section";
-import SectionHeading from "@/components/section-heading";
 
 const stats = [
   { value: "2000+", label: "Entreprises accompagnées", detail: "Tous secteurs, de l'artisan seul à la PME multi-sites." },

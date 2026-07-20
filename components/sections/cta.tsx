@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import AnimatedSection from "@/components/animated-section";
 
 export default function Cta() {

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { articles } from "@/lib/blog";
-import { site } from "@/lib/site";
 
 export const metadata = {
   title: "Blog — Conseils e-réputation et avis clients",
