@@ -91,13 +91,13 @@ export default function FloatingTestimonials() {
               initial={{ opacity: 0, y: 30, scale: 0.9 }}
               variants={floatVariants}
               custom={i}
-              className={`absolute inset-0 rounded-2xl bg-white p-5 shadow-2xl ring-1 ${
-                isActive ? "ring-sky-200 z-10" : "ring-slate-100 z-0"
+              className={`absolute inset-0 rounded-2xl bg-[#0d0d12] p-5 shadow-2xl ring-1 ${
+                isActive ? "ring-lime-200 z-10" : "ring-slate-100 z-0"
               }`}
               style={{ transformOrigin: "center center" }}
             >
               <div className="flex items-start gap-3">
-                <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full ring-2 ring-sky-100">
+                <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full ring-2 ring-lime-100">
                   <Image
                     src={t.image}
                     alt={t.name}
@@ -111,19 +111,19 @@ export default function FloatingTestimonials() {
                       <Star key={j} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-700 line-clamp-3">
+                  <p className="mt-2 text-sm leading-relaxed text-slate-200 line-clamp-3">
                     &ldquo;{t.quote}&rdquo;
                   </p>
                   <div className="mt-3 flex items-center gap-2">
                     <div>
-                      <p className="text-sm font-semibold text-slate-900">{t.name}</p>
-                      <p className="text-xs text-slate-500">{t.role}</p>
+                      <p className="text-sm font-semibold text-white">{t.name}</p>
+                      <p className="text-xs text-slate-400">{t.role}</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="absolute -bottom-1 -right-1 h-3 w-3 rotate-45 bg-white ring-1 ring-sky-100" />
+              <div className="absolute -bottom-1 -right-1 h-3 w-3 rotate-45 bg-[#0d0d12] ring-1 ring-lime-100" />
             </motion.div>
           );
         })}

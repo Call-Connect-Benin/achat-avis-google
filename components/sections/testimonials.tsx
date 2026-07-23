@@ -32,7 +32,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-blue-50 py-20">
+    <section className="bg-lime-400/[0.06] py-10">
       <div className="mx-auto max-w-6xl px-4">
         <AnimatedSection>
           <SectionHeading
@@ -41,16 +41,16 @@ export default function Testimonials() {
           />
         </AnimatedSection>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
+        <div className="mt-6 grid gap-6 md:grid-cols-3">
           {testimonials.map((t, i) => (
             <AnimatedSection key={t.name} delay={i * 0.1}>
-              <figure className="flex flex-col rounded-2xl bg-white p-6 transition hover:shadow-sm">
+              <figure className="flex flex-col rounded-2xl bg-[#0d0d12] p-6 transition hover:shadow-sm">
                 <div className="flex gap-0.5 text-amber-400">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star key={i} className="h-4 w-4 fill-current" />
                   ))}
                 </div>
-                <blockquote className="mt-3 flex-1 text-sm text-slate-700 italic">
+                <blockquote className="mt-3 flex-1 text-sm text-slate-200 italic">
                   {t.quote}
                 </blockquote>
                   <figcaption className="mt-4 flex items-center gap-3">
@@ -64,11 +64,11 @@ export default function Testimonials() {
                       />
                     </span>
                     <span className="text-sm">
-                      <span className="block font-semibold text-slate-900">
+                      <span className="block font-semibold text-white">
                         {t.name}
                       </span>
-                      <span className="block text-slate-500">{t.role}</span>
-                      <span className="mt-0.5 block text-xs font-medium text-blue-700">
+                      <span className="block text-slate-400">{t.role}</span>
+                      <span className="mt-0.5 block text-xs font-medium text-lime-300">
                         {t.detail}
                       </span>
                     </span>

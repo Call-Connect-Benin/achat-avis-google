@@ -51,18 +51,18 @@ export async function generateMetadata({
 
 function Block({ block }: { block: ArticleBlock }) {
   if (block.type === "h2") {
-    return <h2 className="mt-8 text-2xl font-semibold text-slate-900">{block.text}</h2>;
+    return <h2 className="mt-8 text-2xl font-semibold text-white">{block.text}</h2>;
   }
   if (block.type === "ul") {
     return (
-      <ul className="mt-4 list-disc space-y-2 pl-5 text-slate-700">
+      <ul className="mt-4 list-disc space-y-2 pl-5 text-slate-200">
         {block.items.map((item) => (
           <li key={item}>{item}</li>
         ))}
       </ul>
     );
   }
-  return <p className="mt-4 leading-relaxed text-slate-700">{block.text}</p>;
+  return <p className="mt-4 leading-relaxed text-slate-200">{block.text}</p>;
 }
 
 function ArticleJsonLd({ article }: { article: ReturnType<typeof getArticle> }) {
@@ -142,21 +142,21 @@ export default async function ArticlePage({
   return (
     <>
       <ArticleJsonLd article={article} />
-      <main className="mx-auto max-w-3xl px-4 py-16">
-        <Link href="/blog" className="text-sm font-medium text-sky-700 hover:underline">
+      <main className="mx-auto max-w-3xl px-4 py-8">
+        <Link href="/blog" className="text-sm font-medium text-lime-700 hover:underline">
           ← Tous les articles
         </Link>
 
-        <div className="mt-6 flex items-center gap-2 text-xs font-medium text-sky-700">
-          <span className="rounded-full bg-sky-50 px-2.5 py-1">{article.category}</span>
+        <div className="mt-6 flex items-center gap-2 text-xs font-medium text-lime-700">
+          <span className="rounded-full bg-yellow-300/[0.06] px-2.5 py-1">{article.category}</span>
           <span className="text-slate-400">{article.readingTime}</span>
           <span className="text-slate-400">· {date}</span>
         </div>
 
-        <h1 className="mt-3 text-4xl font-bold tracking-tight text-slate-900">
+        <h1 className="mt-3 text-4xl font-bold tracking-tight text-white">
           {article.title}
         </h1>
-        <p className="mt-4 text-lg text-slate-600">{article.description}</p>
+        <p className="mt-4 text-lg text-slate-300">{article.description}</p>
 
         <article className="mt-8">
           {article.blocks.map((block, i) => (
@@ -165,40 +165,40 @@ export default async function ArticlePage({
         </article>
 
         {article.faq && article.faq.length > 0 && (
-          <section className="mt-12" aria-label="Questions fréquentes">
-            <h2 className="text-2xl font-semibold text-slate-900">
+          <section className="mt-6" aria-label="Questions fréquentes">
+            <h2 className="text-2xl font-semibold text-white">
               Questions fréquentes
             </h2>
             <div className="mt-4 space-y-4">
               {article.faq.map((f) => (
                 <div
                   key={f.question}
-                  className="rounded-2xl border border-slate-200 bg-white p-6"
+                  className="rounded-2xl border border-white/10 bg-[#0d0d12] p-6"
                 >
-                  <h3 className="text-lg font-semibold text-slate-900">
+                  <h3 className="text-lg font-semibold text-white">
                     {f.question}
                   </h3>
-                  <p className="mt-2 leading-relaxed text-slate-700">{f.answer}</p>
+                  <p className="mt-2 leading-relaxed text-slate-200">{f.answer}</p>
                 </div>
               ))}
             </div>
           </section>
         )}
 
-        <div className="mt-12 rounded-2xl bg-sky-50 p-6 text-center">
-          <p className="font-semibold text-slate-900">
+        <div className="mt-6 rounded-2xl bg-yellow-300/[0.06] p-6 text-center">
+          <p className="font-semibold text-white">
             Prêt à collecter vos premiers avis ?
           </p>
           <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href="/tarifs"
-              className="rounded-full bg-sky-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-sky-700"
+              className="rounded-full bg-lime-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-lime-700"
             >
               Démarrer gratuitement
             </Link>
             <Link
               href="/outils/generateur-avis"
-              className="rounded-full border border-sky-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-sky-50"
+              className="rounded-full border border-lime-300 bg-[#0d0d12] px-6 py-3 text-sm font-semibold text-slate-200 transition-colors hover:bg-yellow-300/[0.06]"
             >
               Générateur de QR code
             </Link>

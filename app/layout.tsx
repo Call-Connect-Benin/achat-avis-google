@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Lora } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
 import SiteHeader from "@/components/site-header";
@@ -11,29 +11,25 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const lora = Lora({
-  variable: "--font-lora",
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-});
-
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} : ${site.tagline}`,
+    default: "Achat Avis Google France | Guides Vérifiés & Dashboard",
     template: `%s | ${site.name}`,
   },
   description: site.description,
   keywords: [
-    "avis clients",
-    "e-reputation",
-    "google avis",
-    "collecte d'avis",
-    "gestion d'avis",
-    "reputation en ligne",
+    "achat avis google",
+    "acheter avis google",
+    "achat avis google france",
+    "avis google vérifiés",
+    "guides google rémunérés",
+    "dashboard avis google",
+    "gestion avis google",
+    "e-réputation entreprise",
   ],
   openGraph: {
-    title: `${site.name} : ${site.tagline}`,
+    title: "Achat Avis Google France | Guides Vérifiés & Dashboard",
     description: site.description,
     url: site.url,
     siteName: site.name,
@@ -50,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} : ${site.tagline}`,
+    title: "Achat Avis Google France | Guides Vérifiés & Dashboard",
     description: site.description,
     images: [site.ogImage],
   },
@@ -66,9 +62,9 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${inter.variable} ${lora.variable} h-full antialiased`}
+      className={`${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white text-slate-900">
+      <body className="min-h-full flex flex-col bg-[#0d0d12] text-white">
         <JsonLd />
         <SiteHeader />
         <main className="flex-1">{children}</main>

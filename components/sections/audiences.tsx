@@ -20,7 +20,7 @@ const audienceExtras = [
 
 export default function Audiences() {
   return (
-    <section className="py-20">
+    <section className="py-10">
       <div className="mx-auto max-w-6xl px-4">
         <AnimatedSection>
           <SectionHeading
@@ -30,19 +30,19 @@ export default function Audiences() {
           />
         </AnimatedSection>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {audiences.map((a, i) => {
             const Icon = a.icon;
             return (
               <AnimatedSection key={a.title} delay={i * 0.05}>
-                <div className="h-full rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100">
-                    <Icon className="h-6 w-6 text-blue-700" strokeWidth={1.5} />
+                <div className="h-full rounded-2xl bg-[#0d0d12] p-6 shadow-sm ring-1 ring-white/10">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-lime-400/10">
+                    <Icon className="h-6 w-6 text-lime-300" strokeWidth={1.5} />
                   </div>
-                  <h3 className="mt-4 font-semibold text-slate-900">
+                  <h3 className="mt-4 font-semibold text-white">
                     {a.title}
                   </h3>
-                  <p className="mt-2 text-sm text-slate-600">{a.description}</p>
+                  <p className="mt-2 text-sm text-slate-300">{a.description}</p>
                 </div>
               </AnimatedSection>
             );
@@ -50,13 +50,13 @@ export default function Audiences() {
         </div>
 
         <AnimatedSection delay={0.2}>
-          <div className="mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-2">
+          <div className="mx-auto mt-6 grid max-w-4xl gap-4 sm:grid-cols-2">
             {audienceExtras.map((e) => (
               <div
                 key={e}
-                className="flex items-center gap-3 rounded-xl bg-blue-50 px-5 py-4 text-sm text-slate-700 ring-1 ring-blue-100"
+                className="flex items-center gap-3 rounded-xl bg-lime-400/[0.06] px-5 py-4 text-sm text-slate-200 ring-1 ring-green-100"
               >
-                <span className="h-2 w-2 shrink-0 rounded-full bg-blue-500" />
+                <span className="h-2 w-2 shrink-0 rounded-full bg-lime-400/[0.06]0" />
                 {e}
               </div>
             ))}

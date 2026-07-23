@@ -571,36 +571,36 @@ export default async function MethodePage({
 
   return (
     <div className="flex flex-col">
-      <section className="relative overflow-hidden bg-blue-50">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-50 via-white to-white" />
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <section className="relative overflow-hidden bg-lime-400/[0.06]">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0d0f0a] via-[#101016] to-[#0d0d12]" />
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+            <span className="inline-flex items-center gap-2 rounded-full bg-lime-400/10 px-4 py-2 text-sm font-semibold text-lime-300">
               <Icon className="h-4 w-4" />
               {method.eyebrow}
             </span>
-            <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+            <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
               {method.title}
             </h1>
-            <p className="mt-6 text-lg leading-8 text-slate-600">
+            <p className="mt-6 text-lg leading-8 text-slate-300">
               {method.heroLead}
             </p>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="rounded-full bg-blue-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-blue-700 hover:shadow-xl"
+                className="rounded-full bg-green-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-green-700 hover:shadow-xl"
               >
                 Nous contacter
               </Link>
               <Link
                 href="/tarifs"
-                className="rounded-full border border-blue-300 bg-white px-8 py-3.5 text-base font-semibold text-slate-700 transition-all hover:bg-blue-50"
+                className="rounded-full border border-lime-400/35 bg-[#0d0d12] px-8 py-3.5 text-base font-semibold text-slate-200 transition-all hover:bg-lime-400/[0.06]"
               >
                 Voir les tarifs
               </Link>
               <Link
                 href="/contact"
-                className="rounded-full bg-blue-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-blue-700 hover:shadow-xl"
+                className="rounded-full bg-green-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-green-700 hover:shadow-xl"
               >
                 S'inscrire gratuitement
               </Link>
@@ -609,28 +609,28 @@ export default async function MethodePage({
         </div>
       </section>
 
-      <section className="bg-blue-50 py-16 sm:py-24">
+      <section className="bg-lime-400/[0.06] py-8 sm:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Comment ça fonctionne ?
             </h2>
-            <p className="mt-4 text-lg text-slate-600">
+            <p className="mt-4 text-lg text-slate-300">
               Un processus simple en 3 étapes pour collecter des avis authentiques.
             </p>
           </AnimatedSection>
 
-          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {method.steps.map((step, index) => (
               <AnimatedSection key={step.title} delay={index * 0.1}>
-                <div className="relative h-full rounded-3xl bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md">
-                  <span className="text-5xl font-extrabold text-blue-200">
+                <div className="relative h-full rounded-3xl bg-[#0d0d12] p-8 shadow-sm transition-all duration-300 hover:shadow-md">
+                  <span className="text-5xl font-extrabold text-green-200">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="mt-4 text-xl font-bold text-slate-900">
+                  <h3 className="mt-4 text-xl font-bold text-white">
                     {step.title}
                   </h3>
-                  <p className="mt-3 text-base leading-7 text-slate-600">
+                  <p className="mt-3 text-base leading-7 text-slate-300">
                     {step.description}
                   </p>
                 </div>
@@ -640,30 +640,30 @@ export default async function MethodePage({
         </div>
       </section>
 
-      <section className="py-16 sm:py-24">
+      <section className="py-8 sm:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Les avantages de {method.title.toLowerCase()}
             </h2>
-            <p className="mt-4 text-lg text-slate-600">
+            <p className="mt-4 text-lg text-slate-300">
               Pourquoi cette méthode booste votre collecte d'avis Google.
             </p>
           </AnimatedSection>
 
-          <div className="mt-16 grid gap-8 md:grid-cols-3">
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
             {method.benefits.map((benefit, index) => {
               const BenefitIcon = benefit.icon;
               return (
                 <AnimatedSection key={benefit.title} delay={index * 0.1}>
-                  <div className="h-full rounded-3xl border border-blue-200 bg-white p-8 transition-all duration-300 hover:shadow-lg hover:border-blue-400">
-                    <div className="inline-flex rounded-2xl bg-blue-100 p-3">
-                      <BenefitIcon className="h-8 w-8 text-blue-700" />
+                  <div className="h-full rounded-3xl border border-lime-400/25 bg-[#0d0d12] p-8 transition-all duration-300 hover:shadow-lg hover:border-green-400">
+                    <div className="inline-flex rounded-2xl bg-lime-400/10 p-3">
+                      <BenefitIcon className="h-8 w-8 text-lime-300" />
                     </div>
-                    <h3 className="mt-6 text-2xl font-bold text-slate-900">
+                    <h3 className="mt-6 text-2xl font-bold text-white">
                       {benefit.title}
                     </h3>
-                    <p className="mt-4 text-base leading-7 text-slate-600">
+                    <p className="mt-4 text-base leading-7 text-slate-300">
                       {benefit.description}
                     </p>
                   </div>
@@ -674,28 +674,28 @@ export default async function MethodePage({
         </div>
       </section>
 
-      <section className="bg-blue-50 py-16 sm:py-24">
+      <section className="bg-lime-400/[0.06] py-8 sm:py-10">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Questions fréquentes
             </h2>
-            <p className="mt-4 text-lg text-slate-600">
+            <p className="mt-4 text-lg text-slate-300">
               Tout ce qu'il faut savoir sur {method.title.toLowerCase()}.
             </p>
           </AnimatedSection>
 
-          <div className="mt-10 space-y-3">
+          <div className="mt-6 space-y-3">
             {method.faq.map((f) => (
               <AnimatedSection key={f.q}>
-                <details className="group rounded-2xl bg-white p-5 transition hover:bg-blue-100/40 [&_summary::-webkit-details-marker]:hidden">
-                  <summary className="flex cursor-pointer list-none items-center justify-between font-medium text-slate-900">
+                <details className="group rounded-2xl bg-[#0d0d12] p-5 transition hover:bg-lime-400/10/40">
+                  <summary className="flex cursor-pointer list-none items-center justify-between font-medium text-white">
                     {f.q}
                     <span className="ml-4 text-slate-400 transition-transform group-open:rotate-45">
                       +
                     </span>
                   </summary>
-                  <p className="mt-3 text-sm text-slate-600">{f.a}</p>
+                  <p className="mt-3 text-sm text-slate-300">{f.a}</p>
                 </details>
               </AnimatedSection>
             ))}
@@ -721,7 +721,7 @@ export default async function MethodePage({
         })}
       />
 
-      <section className="bg-slate-900 py-16 sm:py-24">
+      <section className="bg-slate-900 py-8 sm:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
@@ -730,10 +730,10 @@ export default async function MethodePage({
             <p className="mt-4 text-lg text-slate-300">
               Rejoignez plus de 2 000 entreprises qui collectent des avis authentiques.
             </p>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="rounded-full bg-blue-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-blue-400 hover:shadow-xl"
+                className="rounded-full bg-lime-400/[0.06]0 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-green-400 hover:shadow-xl"
               >
                 Créer mon compte
                 <ArrowRight className="ml-2 inline h-4 w-4" />

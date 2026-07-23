@@ -36,7 +36,7 @@ export default function Faq() {
   };
 
   return (
-    <section className="mx-auto max-w-3xl px-4 py-20">
+    <section className="mx-auto max-w-3xl px-4 py-10">
       <AnimatedSection>
         <SectionHeading
           eyebrow="FAQ"
@@ -45,19 +45,19 @@ export default function Faq() {
         />
       </AnimatedSection>
 
-      <div className="mt-10 space-y-3">
+      <div className="mt-6 space-y-3">
         {faqs.map((f, i) => (
           <AnimatedSection key={f.q} delay={i * 0.05}>
             <details
-              className="group rounded-2xl bg-slate-50 p-5 transition hover:bg-slate-100 [&_summary::-webkit-details-marker]:hidden"
+              className="group rounded-2xl bg-[#111118] p-5 transition hover:bg-[#17171f]"
             >
-              <summary className="flex cursor-pointer list-none items-center justify-between font-medium text-slate-900">
+              <summary className="flex cursor-pointer list-none items-center justify-between font-medium text-white">
                 {f.q}
                 <span className="ml-4 text-slate-400 transition-transform group-open:rotate-45">
                   +
                 </span>
               </summary>
-              <p className="mt-3 text-sm text-slate-600">{f.a}</p>
+              <p className="mt-3 text-sm text-slate-300">{f.a}</p>
             </details>
           </AnimatedSection>
         ))}

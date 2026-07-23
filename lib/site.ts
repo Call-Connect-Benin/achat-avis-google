@@ -2,9 +2,9 @@ export const site = {
   name: "Achat Avis Google",
   domain: "achat-avis-google.com",
   url: "https://achat-avis-google.com",
-  tagline: "La plateforme pour collecter de vrais avis clients",
+  tagline: "Achat d’avis Google avec guides vérifiés et suivi",
   description:
-    "Achat Avis Google aide les entreprises à collecter, gérer et mettre en valeur des avis clients authentiques sur Google, Trustpilot et les autres plateformes. E-réputation conforme et durable.",
+    "Service d’achat d’avis Google pour entreprises : guides vérifiés, publication progressive, contrôle des preuves et dashboard de suivi en temps réel.",
   logo: "https://achat-avis-google.com/images/logo.png",
   ogImage: "https://achat-avis-google.com/images/og-default.png",
   author: {

@@ -50,7 +50,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="fonctionnalites" className="mx-auto max-w-6xl px-4 py-20">
+    <section id="fonctionnalites" className="mx-auto max-w-6xl px-4 py-10">
       <AnimatedSection>
         <SectionHeading
           eyebrow="Fonctionnement"
@@ -59,19 +59,19 @@ export default function HowItWorks() {
         />
       </AnimatedSection>
 
-      <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {steps.map((step) => (
           <AnimatedSection key={step.n} delay={step.n * 0.1}>
-            <div className="flex h-full flex-col rounded-2xl bg-blue-50 p-6 transition hover:bg-blue-100">
-              <div className="grid h-10 w-10 place-items-center rounded-full bg-blue-100 text-sm font-bold text-blue-700">
+            <div className="flex h-full flex-col rounded-2xl bg-lime-400/[0.06] p-6 transition hover:bg-lime-400/10">
+              <div className="grid h-10 w-10 place-items-center rounded-full bg-lime-400/10 text-sm font-bold text-lime-300">
                 {step.n}
               </div>
-              <h3 className="mt-4 font-semibold text-slate-900">{step.title}</h3>
-              <p className="mt-2 text-sm text-slate-600">{step.description}</p>
+              <h3 className="mt-4 font-semibold text-white">{step.title}</h3>
+              <p className="mt-2 text-sm text-slate-300">{step.description}</p>
               <ul className="mt-4 space-y-2">
                 {step.points.map((p) => (
-                  <li key={p} className="flex items-start gap-2 text-xs text-slate-600">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500" />
+                  <li key={p} className="flex items-start gap-2 text-xs text-slate-300">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-lime-400/[0.06]0" />
                     {p}
                   </li>
                 ))}

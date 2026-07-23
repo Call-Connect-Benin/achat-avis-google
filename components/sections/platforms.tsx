@@ -19,7 +19,7 @@ const platforms: Platform[] = [
           d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"
         />
         <path
-          fill="#4285F4"
+          fill="#16a34a"
           d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"
         />
         <path
@@ -88,23 +88,23 @@ const platforms: Platform[] = [
 
 export default function Platforms() {
   return (
-    <section className="bg-white py-16">
+    <section className="bg-[#0d0d12] py-8">
       <div className="mx-auto max-w-6xl px-4">
         <AnimatedSection>
-          <h2 className="text-center text-2xl font-semibold tracking-tight text-slate-900">
+          <h2 className="text-center text-2xl font-semibold tracking-tight text-white">
             Collectez des avis sur toutes les plateformes
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-slate-600">
+          <p className="mx-auto mt-3 max-w-2xl text-center text-slate-300">
             Google, Trustpilot, Facebook, TripAdvisor... centralisez votre e-réputation en un seul endroit. Quelle que soit votre secteur, vos clients laissent des avis là où ils ont l'habitude de chercher — et vous pilotez tout depuis un unique tableau de bord.
           </p>
         </AnimatedSection>
 
-        <div className="mt-10 flex flex-wrap items-stretch justify-center gap-6">
+        <div className="mt-6 flex flex-wrap items-stretch justify-center gap-6">
           {platforms.map((p, i) => (
             <AnimatedSection key={p.name} delay={i * 0.05}>
-              <div className="flex h-36 w-44 flex-col items-center justify-center gap-2 rounded-xl bg-white px-4 text-center shadow-sm ring-1 ring-slate-200">
+              <div className="flex h-36 w-44 flex-col items-center justify-center gap-2 rounded-xl bg-[#0d0d12] px-4 text-center shadow-sm ring-1 ring-white/10">
                 {p.logo}
-                <span className="text-sm font-semibold text-slate-600">{p.name}</span>
+                <span className="text-sm font-semibold text-slate-300">{p.name}</span>
                 <span className="text-xs text-slate-400">{p.description}</span>
               </div>
             </AnimatedSection>
@@ -112,10 +112,10 @@ export default function Platforms() {
         </div>
 
         <AnimatedSection delay={0.2}>
-          <div className="mt-10 flex justify-center">
+          <div className="mt-6 flex justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
+              className="inline-flex items-center gap-2 rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-green-700"
             >
               Demander un devis
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

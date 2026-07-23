@@ -451,30 +451,30 @@ export default async function VillePage({
 
   return (
     <div className="flex flex-col">
-      <section className="relative overflow-hidden bg-blue-50">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-50 via-white to-white" />
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <section className="relative overflow-hidden bg-lime-400/[0.06]">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0d0f0a] via-[#101016] to-[#0d0d12]" />
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+            <span className="inline-flex items-center gap-2 rounded-full bg-lime-400/10 px-4 py-2 text-sm font-semibold text-lime-300">
               <MapPin className="h-4 w-4" />
               {ville.eyebrow}
             </span>
-            <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+            <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
               {ville.title}
             </h1>
-            <p className="mt-6 text-lg leading-8 text-slate-600">
+            <p className="mt-6 text-lg leading-8 text-slate-300">
               {ville.heroLead}
             </p>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="rounded-full bg-blue-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-blue-700 hover:shadow-xl"
+                className="rounded-full bg-green-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-green-700 hover:shadow-xl"
               >
                 Nous contacter
               </Link>
               <Link
                 href="/contact"
-                className="rounded-full border border-blue-300 bg-white px-8 py-3.5 text-base font-semibold text-slate-700 transition-all hover:bg-blue-50"
+                className="rounded-full border border-lime-400/35 bg-[#0d0d12] px-8 py-3.5 text-base font-semibold text-slate-200 transition-all hover:bg-lime-400/[0.06]"
               >
                 S'inscrire gratuitement
               </Link>
@@ -483,28 +483,28 @@ export default async function VillePage({
         </div>
       </section>
 
-      <section className="py-16 sm:py-24">
+      <section className="py-8 sm:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Nos services à votre disposition
             </h2>
-            <p className="mt-4 text-lg text-slate-600">
+            <p className="mt-4 text-lg text-slate-300">
               4 solutions pour améliorer votre e-réputation locale.
             </p>
           </AnimatedSection>
 
-          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {ville.services.map((service, index) => (
               <AnimatedSection key={service.title} delay={index * 0.1}>
-                <div className="relative h-full rounded-3xl bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md">
-                  <span className="text-5xl font-extrabold text-blue-200">
+                <div className="relative h-full rounded-3xl bg-[#0d0d12] p-8 shadow-sm transition-all duration-300 hover:shadow-md">
+                  <span className="text-5xl font-extrabold text-green-200">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="mt-4 text-xl font-bold text-slate-900">
+                  <h3 className="mt-4 text-xl font-bold text-white">
                     {service.title}
                   </h3>
-                  <p className="mt-3 text-base leading-7 text-slate-600">
+                  <p className="mt-3 text-base leading-7 text-slate-300">
                     {service.description}
                   </p>
                 </div>
@@ -514,29 +514,29 @@ export default async function VillePage({
         </div>
       </section>
 
-      <section className="bg-blue-50 py-16 sm:py-24">
+      <section className="bg-lime-400/[0.06] py-8 sm:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Secteurs d'activité que nous accompagnons
             </h2>
-            <p className="mt-4 text-lg text-slate-600">
+            <p className="mt-4 text-lg text-slate-300">
               Nous travaillons avec tous les secteurs d'activité à {ville.title.split(" ").pop()}.
             </p>
           </AnimatedSection>
 
-          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {ville.sectors.map((sector, index) => {
               const Icon = sector.icon;
               return (
                 <AnimatedSection key={sector.title} delay={index * 0.1}>
-                  <div className="flex h-full items-center gap-4 rounded-3xl border border-blue-200 bg-white p-6 transition-all duration-300 hover:shadow-lg hover:border-blue-400">
+                  <div className="flex h-full items-center gap-4 rounded-3xl border border-lime-400/25 bg-[#0d0d12] p-6 transition-all duration-300 hover:shadow-lg hover:border-green-400">
                     <div className="flex-shrink-0">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100">
-                        <Icon className="h-6 w-6 text-blue-700" />
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-lime-400/10">
+                        <Icon className="h-6 w-6 text-lime-300" />
                       </div>
                     </div>
-                    <h3 className="text-lg font-semibold text-slate-900">
+                    <h3 className="text-lg font-semibold text-white">
                       {sector.title}
                     </h3>
                   </div>
@@ -547,30 +547,30 @@ export default async function VillePage({
         </div>
       </section>
 
-      <section className="py-16 sm:py-24">
+      <section className="py-8 sm:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Pourquoi les avis Google sont essentiels à {ville.title.split(" ").pop()}
             </h2>
-            <p className="mt-4 text-lg text-slate-600">
+            <p className="mt-4 text-lg text-slate-300">
               3 raisons pour lesquelles les avis Google transforment votre activité locale.
             </p>
           </AnimatedSection>
 
-          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <AnimatedSection delay={0.1}>
-              <div className="flex h-full items-start gap-4 rounded-3xl border border-blue-200 bg-white p-8 transition-all duration-300 hover:shadow-lg hover:border-blue-400">
+              <div className="flex h-full items-start gap-4 rounded-3xl border border-lime-400/25 bg-[#0d0d12] p-8 transition-all duration-300 hover:shadow-lg hover:border-green-400">
                 <div className="flex-shrink-0">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100">
-                    <CheckCircle2 className="h-6 w-6 text-blue-700" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-lime-400/10">
+                    <CheckCircle2 className="h-6 w-6 text-lime-300" />
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900">
+                  <h3 className="text-xl font-bold text-white">
                     Visibilité locale renforcée
                   </h3>
-                  <p className="mt-2 text-base leading-7 text-slate-600">
+                  <p className="mt-2 text-base leading-7 text-slate-300">
                     Les consommateurs de {ville.title.split(" ").pop()} consultent les avis avant de contacter un professionnel. Une fiche active et bien notée convertit davantage.
                   </p>
                 </div>
@@ -578,17 +578,17 @@ export default async function VillePage({
             </AnimatedSection>
 
             <AnimatedSection delay={0.2}>
-              <div className="flex h-full items-start gap-4 rounded-3xl border border-blue-200 bg-white p-8 transition-all duration-300 hover:shadow-lg hover:border-blue-400">
+              <div className="flex h-full items-start gap-4 rounded-3xl border border-lime-400/25 bg-[#0d0d12] p-8 transition-all duration-300 hover:shadow-lg hover:border-green-400">
                 <div className="flex-shrink-0">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100">
-                    <CheckCircle2 className="h-6 w-6 text-blue-700" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-lime-400/10">
+                    <CheckCircle2 className="h-6 w-6 text-lime-300" />
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900">
+                  <h3 className="text-xl font-bold text-white">
                     Confiance des clients
                   </h3>
-                  <p className="mt-2 text-base leading-7 text-slate-600">
+                  <p className="mt-2 text-base leading-7 text-slate-300">
                     Une note élevée et des avis détaillés rassurent les prospects et renforcent votre crédibilité sur le marché local.
                   </p>
                 </div>
@@ -596,17 +596,17 @@ export default async function VillePage({
             </AnimatedSection>
 
             <AnimatedSection delay={0.3}>
-              <div className="flex h-full items-start gap-4 rounded-3xl border border-blue-200 bg-white p-8 transition-all duration-300 hover:shadow-lg hover:border-blue-400">
+              <div className="flex h-full items-start gap-4 rounded-3xl border border-lime-400/25 bg-[#0d0d12] p-8 transition-all duration-300 hover:shadow-lg hover:border-green-400">
                 <div className="flex-shrink-0">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100">
-                    <CheckCircle2 className="h-6 w-6 text-blue-700" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-lime-400/10">
+                    <CheckCircle2 className="h-6 w-6 text-lime-300" />
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900">
+                  <h3 className="text-xl font-bold text-white">
                     Différenciation concurrentielle
                   </h3>
-                  <p className="mt-2 text-base leading-7 text-slate-600">
+                  <p className="mt-2 text-base leading-7 text-slate-300">
                     Dans un marché local compétitif, des avis authentiques vous démarquent de vos concurrents et attirent plus de clients.
                   </p>
                 </div>
@@ -618,7 +618,7 @@ export default async function VillePage({
 
       <ContentSections data={getContentSections("ville", ville.title, { ville: ville.title, ...(ville.slug === "paris" ? { imageSrc: "/image copy 27.png" } : ville.slug === "lyon" ? { imageSrc: "/image copy 28.png" } : ville.slug === "marseille" ? { imageSrc: "/image copy 29.png" } : ville.slug === "bordeaux" ? { imageSrc: "/image copy 30.png" } : ville.slug === "lille" ? { imageSrc: "/image copy 31.png" } : ville.slug === "toulouse" ? { imageSrc: "/image copy 32.png" } : ville.slug === "nantes" ? { imageSrc: "/image copy 33.png" } : ville.slug === "nice" ? { imageSrc: "/image copy 34.png" } : ville.slug === "strasbourg" ? { imageSrc: "/image copy 35.png" } : ville.slug === "montpellier" ? { imageSrc: "/image copy 37.png" } : {}) })} />
 
-      <section className="bg-slate-900 py-16 sm:py-24">
+      <section className="bg-slate-900 py-8 sm:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
@@ -627,10 +627,10 @@ export default async function VillePage({
             <p className="mt-4 text-lg text-slate-300">
               Notre équipe vous accompagne dans la collecte et la gestion de vos avis Google.
             </p>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="rounded-full bg-blue-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-blue-400 hover:shadow-xl"
+                className="rounded-full bg-lime-400/[0.06]0 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-green-400 hover:shadow-xl"
               >
                 Nous contacter
                 <ArrowRight className="ml-2 inline h-4 w-4" />

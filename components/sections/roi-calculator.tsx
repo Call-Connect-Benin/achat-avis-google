@@ -41,22 +41,22 @@ export default function RoiCalculator() {
   const yearlyRevenue = extraRevenue * 12;
 
   return (
-    <section className="mx-auto max-w-6xl px-4 py-20">
+    <section className="mx-auto max-w-6xl px-4 py-10">
       <div className="mx-auto max-w-2xl text-center">
         <p className="eyebrow">Calculateur de ROI</p>
-        <h2 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+        <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
           Combien vos avis peuvent vous rapporter
         </h2>
-        <p className="mt-4 text-slate-600">
+        <p className="mt-4 text-slate-300">
           Une bonne e-réputation transforme les visiteurs en clients. Estimez le
           gain mensuel généré par une fiche active et bien notée.
         </p>
       </div>
 
-      <div className="mt-12 grid gap-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-10 md:grid-cols-2">
+      <div className="mt-6 grid gap-6 rounded-3xl border border-white/10 bg-[#0d0d12] p-6 shadow-sm sm:p-10 md:grid-cols-2">
         <div className="space-y-6">
           <div>
-            <label htmlFor="ticket" className="block text-sm font-medium text-slate-700">
+            <label htmlFor="ticket" className="block text-sm font-medium text-slate-200">
               Ticket moyen par client : {eur.format(form.ticket)}
             </label>
             <input
@@ -67,12 +67,12 @@ export default function RoiCalculator() {
               step={5}
               value={form.ticket}
               onChange={(e) => set("ticket", Number(e.target.value))}
-              className="mt-2 w-full accent-sky-600"
+              className="mt-2 w-full accent-lime-600"
             />
           </div>
 
           <div>
-            <label htmlFor="customers" className="block text-sm font-medium text-slate-700">
+            <label htmlFor="customers" className="block text-sm font-medium text-slate-200">
               Clients acquis par mois : {num.format(form.customers)}
             </label>
             <input
@@ -83,12 +83,12 @@ export default function RoiCalculator() {
               step={10}
               value={form.customers}
               onChange={(e) => set("customers", Number(e.target.value))}
-              className="mt-2 w-full accent-sky-600"
+              className="mt-2 w-full accent-lime-600"
             />
           </div>
 
           <div>
-              <label htmlFor="reviews" className="block text-sm font-medium text-slate-700">
+              <label htmlFor="reviews" className="block text-sm font-medium text-slate-200">
                 Avis collectés à ce jour : {num.format(form.reviews)}
               </label>
               <input
@@ -99,7 +99,7 @@ export default function RoiCalculator() {
                 step={5}
                 value={form.reviews}
                 onChange={(e) => set("reviews", Number(e.target.value))}
-                className="mt-2 w-full accent-sky-600"
+                className="mt-2 w-full accent-lime-600"
               />
               <p className="mt-1 text-xs text-slate-400">
                 Nos offres livrent de 30 à 90 avis authentiques.
@@ -107,7 +107,7 @@ export default function RoiCalculator() {
           </div>
 
           <div>
-            <label htmlFor="rating" className="block text-sm font-medium text-slate-700">
+            <label htmlFor="rating" className="block text-sm font-medium text-slate-200">
               Note moyenne actuelle : {form.rating.toFixed(1)} / 5
             </label>
             <input
@@ -118,28 +118,28 @@ export default function RoiCalculator() {
               step={0.1}
               value={form.rating}
               onChange={(e) => set("rating", Number(e.target.value))}
-              className="mt-2 w-full accent-sky-600"
+              className="mt-2 w-full accent-lime-600"
             />
           </div>
         </div>
 
-        <div className="flex flex-col justify-center gap-5 rounded-2xl bg-sky-50 p-8 text-center">
+        <div className="flex flex-col justify-center gap-5 rounded-2xl bg-yellow-300/[0.06] p-8 text-center">
           <div>
-            <p className="text-sm text-slate-600">Clients supplémentaires / mois</p>
-            <p className="mt-1 text-4xl font-bold text-slate-900">
+            <p className="text-sm text-slate-300">Clients supplémentaires / mois</p>
+            <p className="mt-1 text-4xl font-bold text-white">
               +{num.format(extraCustomers)}
             </p>
           </div>
-          <div className="h-px w-full bg-sky-200" />
+          <div className="h-px w-full bg-lime-200" />
           <div>
-            <p className="text-sm text-slate-600">Chiffre d'affaires en plus / mois</p>
-            <p className="mt-1 text-4xl font-bold text-sky-700">
+            <p className="text-sm text-slate-300">Chiffre d'affaires en plus / mois</p>
+            <p className="mt-1 text-4xl font-bold text-lime-700">
               {eur.format(extraRevenue)}
             </p>
           </div>
           <div>
-            <p className="text-sm text-slate-600">Sur un an</p>
-            <p className="mt-1 text-2xl font-semibold text-slate-900">
+            <p className="text-sm text-slate-300">Sur un an</p>
+            <p className="mt-1 text-2xl font-semibold text-white">
               {eur.format(yearlyRevenue)}
             </p>
           </div>
@@ -149,7 +149,7 @@ export default function RoiCalculator() {
           </p>
           <Link
             href="/tarifs"
-            className="mt-1 inline-flex items-center justify-center rounded-full bg-sky-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-sky-700"
+            className="mt-1 inline-flex items-center justify-center rounded-full bg-lime-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-lime-700"
           >
             Voir les offres ({eur.format(plans[0].priceMonthly)} €/mois)
           </Link>

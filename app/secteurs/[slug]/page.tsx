@@ -749,30 +749,30 @@ export default async function SecteurPage({
 
   return (
     <div className="flex flex-col">
-      <section className="relative overflow-hidden bg-blue-50">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-50 via-white to-white" />
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <section className="relative overflow-hidden bg-lime-400/[0.06]">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0d0f0a] via-[#101016] to-[#0d0d12]" />
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+            <span className="inline-flex items-center gap-2 rounded-full bg-lime-400/10 px-4 py-2 text-sm font-semibold text-lime-300">
               <Icon className="h-4 w-4" />
               {secteur.eyebrow}
             </span>
-            <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+            <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
               {secteur.title}
             </h1>
-            <p className="mt-6 text-lg leading-8 text-slate-600">
+            <p className="mt-6 text-lg leading-8 text-slate-300">
               {secteur.heroLead}
             </p>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="rounded-full bg-blue-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-blue-700 hover:shadow-xl"
+                className="rounded-full bg-green-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-green-700 hover:shadow-xl"
               >
                 Nous contacter
               </Link>
               <Link
                 href="/contact"
-                className="rounded-full border border-blue-300 bg-white px-8 py-3.5 text-base font-semibold text-slate-700 transition-all hover:bg-blue-50"
+                className="rounded-full border border-lime-400/35 bg-[#0d0d12] px-8 py-3.5 text-base font-semibold text-slate-200 transition-all hover:bg-lime-400/[0.06]"
               >
                 S'inscrire gratuitement
               </Link>
@@ -781,31 +781,31 @@ export default async function SecteurPage({
         </div>
       </section>
 
-      <section className="bg-blue-50 py-16 sm:py-24">
+      <section className="bg-lime-400/[0.06] py-8 sm:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Pourquoi les avis Google sont essentiels
             </h2>
-            <p className="mt-4 text-lg text-slate-600">
+            <p className="mt-4 text-lg text-slate-300">
               3 raisons pour lesquelles les avis Google transforment votre activité.
             </p>
           </AnimatedSection>
 
-          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {secteur.reasons.map((reason, index) => (
               <AnimatedSection key={reason.title} delay={index * 0.1}>
-                <div className="flex h-full items-start gap-4 rounded-3xl border border-blue-200 bg-white p-8 transition-all duration-300 hover:shadow-lg hover:border-blue-400">
+                <div className="flex h-full items-start gap-4 rounded-3xl border border-lime-400/25 bg-[#0d0d12] p-8 transition-all duration-300 hover:shadow-lg hover:border-green-400">
                   <div className="flex-shrink-0">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100">
-                      <CheckCircle2 className="h-6 w-6 text-blue-700" />
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-lime-400/10">
+                      <CheckCircle2 className="h-6 w-6 text-lime-300" />
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900">
+                    <h3 className="text-xl font-bold text-white">
                       {reason.title}
                     </h3>
-                    <p className="mt-2 text-base leading-7 text-slate-600">
+                    <p className="mt-2 text-base leading-7 text-slate-300">
                       {reason.description}
                     </p>
                   </div>
@@ -816,28 +816,28 @@ export default async function SecteurPage({
         </div>
       </section>
 
-      <section className="py-16 sm:py-24">
+      <section className="py-8 sm:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Comment notre service vous aide
             </h2>
-            <p className="mt-4 text-lg text-slate-600">
+            <p className="mt-4 text-lg text-slate-300">
               4 étapes simples pour collecter plus d'avis authentiques.
             </p>
           </AnimatedSection>
 
-          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {secteur.steps.map((step, index) => (
               <AnimatedSection key={step.title} delay={index * 0.1}>
-                <div className="relative h-full rounded-3xl bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md">
-                  <span className="text-5xl font-extrabold text-blue-200">
+                <div className="relative h-full rounded-3xl bg-[#0d0d12] p-8 shadow-sm transition-all duration-300 hover:shadow-md">
+                  <span className="text-5xl font-extrabold text-green-200">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="mt-4 text-xl font-bold text-slate-900">
+                  <h3 className="mt-4 text-xl font-bold text-white">
                     {step.title}
                   </h3>
-                  <p className="mt-3 text-base leading-7 text-slate-600">
+                  <p className="mt-3 text-base leading-7 text-slate-300">
                     {step.description}
                   </p>
                 </div>
@@ -847,31 +847,31 @@ export default async function SecteurPage({
         </div>
       </section>
 
-      <section className="bg-blue-50 py-16 sm:py-24">
+      <section className="bg-lime-400/[0.06] py-8 sm:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Bonnes pratiques
             </h2>
-            <p className="mt-4 text-lg text-slate-600">
+            <p className="mt-4 text-lg text-slate-300">
               3 conseils pour maximiser vos avis Google.
             </p>
           </AnimatedSection>
 
-          <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {secteur.tips.map((tip, index) => (
               <AnimatedSection key={tip.title} delay={index * 0.1}>
-                <div className="flex h-full items-start gap-4 rounded-3xl border border-blue-200 bg-white p-8 transition-all duration-300 hover:shadow-lg hover:border-blue-400">
+                <div className="flex h-full items-start gap-4 rounded-3xl border border-lime-400/25 bg-[#0d0d12] p-8 transition-all duration-300 hover:shadow-lg hover:border-green-400">
                   <div className="flex-shrink-0">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100">
-                      <CheckCircle2 className="h-6 w-6 text-blue-700" />
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-lime-400/10">
+                      <CheckCircle2 className="h-6 w-6 text-lime-300" />
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900">
+                    <h3 className="text-xl font-bold text-white">
                       {tip.title}
                     </h3>
-                    <p className="mt-2 text-base leading-7 text-slate-600">
+                    <p className="mt-2 text-base leading-7 text-slate-300">
                       {tip.description}
                     </p>
                   </div>
@@ -882,20 +882,20 @@ export default async function SecteurPage({
         </div>
       </section>
 
-      <section className="py-16 sm:py-24">
+      <section className="py-8 sm:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Exemple de demande d'avis
             </h2>
-            <p className="mt-4 text-lg text-slate-600">
+            <p className="mt-4 text-lg text-slate-300">
               Voici un message type que vous pouvez adapter pour solliciter vos clients.
             </p>
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
-            <div className="mx-auto mt-12 max-w-2xl rounded-3xl border border-blue-200 bg-white p-8 shadow-sm">
-              <p className="text-base leading-7 text-slate-600 italic">
+            <div className="mx-auto mt-6 max-w-2xl rounded-3xl border border-lime-400/25 bg-[#0d0d12] p-8 shadow-sm">
+              <p className="text-base leading-7 text-slate-300 italic">
                 "{secteur.example}"
               </p>
             </div>
@@ -903,23 +903,23 @@ export default async function SecteurPage({
         </div>
       </section>
 
-      <section className="bg-blue-50 py-16 sm:py-24">
+      <section className="bg-lime-400/[0.06] py-8 sm:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Chiffres clés et contexte {secteur.title.toLowerCase()}
             </h2>
-            <p className="mt-4 text-lg text-slate-600">
+            <p className="mt-4 text-lg text-slate-300">
               Ce qui distingue votre activité et pourquoi les avis Google sont déterminants dans votre secteur.
             </p>
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
-            <div className="mx-auto mt-12 max-w-3xl rounded-3xl border border-blue-200 bg-white p-8 shadow-sm">
+            <div className="mx-auto mt-6 max-w-3xl rounded-3xl border border-lime-400/25 bg-[#0d0d12] p-8 shadow-sm">
               <div className="grid gap-6 md:grid-cols-2">
                 <div>
-                  <p className="text-sm font-semibold uppercase tracking-wider text-blue-700">Impact local</p>
-                  <p className="mt-2 text-base text-slate-700">
+                  <p className="text-sm font-semibold uppercase tracking-wider text-lime-300">Impact local</p>
+                  <p className="mt-2 text-base text-slate-200">
                     {secteur.slug === "avis-google-restaurant" && "Plus de 80% des consommateurs consultent les avis avant de réserver une table. Une note de 4,5/5 ou plus peut augmenter les réservations de 30%."}
                     {secteur.slug === "avis-google-artisan" && "Les artisans avec plus de 40 avis et une note supérieure à 4,3/5 génèrent 2 fois plus de demandes de devis que ceux qui ont moins de 10 avis."}
                     {secteur.slug === "avis-google-garage" && "La confiance est le premier critère de choix pour 78% des automobilistes. Une note élevée et des avis récents fidélisent la clientèle existante."}
@@ -933,8 +933,8 @@ export default async function SecteurPage({
                   </p>
                 </div>
                 <div>
-                  <p className="text-sm font-semibold uppercase tracking-wider text-blue-700">Conseil secteur</p>
-                  <p className="mt-2 text-base text-slate-700">
+                  <p className="text-sm font-semibold uppercase tracking-wider text-lime-300">Conseil secteur</p>
+                  <p className="mt-2 text-base text-slate-200">
                     {secteur.slug === "avis-google-restaurant" && "Demandez l'avis au moment du dessert, quand l'expérience est encore fraîche. Répondez à tous les commentaires, même les plus critiques : les futurs clients lisent d'abord la réponse."}
                     {secteur.slug === "avis-google-artisan" && "Partagez des photos de vos réalisations sur votre fiche Google. Les avis accompagnés de visuels génèrent 2 fois plus de confiance et de demandes de devis."}
                     {secteur.slug === "avis-google-garage" && "Soyez transparent sur vos tarifs et vos diagnostics. Les avis qui mentionnent la clarté des prix et la qualité des réparations sont les plus partagés."}
@@ -966,7 +966,7 @@ export default async function SecteurPage({
         })}
       />
 
-      <section className="bg-slate-900 py-16 sm:py-24">
+      <section className="bg-slate-900 py-8 sm:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
@@ -975,10 +975,10 @@ export default async function SecteurPage({
             <p className="mt-4 text-lg text-slate-300">
               Notre équipe vous accompagne dans la collecte d'avis Google pour votre activité.
             </p>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="rounded-full bg-blue-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-blue-400 hover:shadow-xl"
+                className="rounded-full bg-lime-400/[0.06]0 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-green-400 hover:shadow-xl"
               >
                 Nous contacter
                 <ArrowRight className="ml-2 inline h-4 w-4" />

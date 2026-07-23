@@ -1,8 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ShieldCheck, ArrowRight } from "lucide-react";
 import { mainNav, site } from "@/lib/site";
 import NewsletterForm from "@/components/newsletter-form";
-import Logo from "@/components/logo";
 
 export default function SiteFooter() {
   const { company, social } = site;
@@ -28,19 +28,19 @@ export default function SiteFooter() {
 
   return (
     <footer>
-      <div className="bg-blue-600 text-white">
+      <div className="bg-green-600 text-white">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-5 px-4 py-10 text-center sm:text-left md:flex-row">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight">
               Prêt à booster votre e-réputation ?
             </h2>
-            <p className="mt-2 text-blue-50">
+            <p className="mt-2 text-green-50">
               Créez votre premier lien de collecte d'avis en moins de 2 minutes.
             </p>
           </div>
           <Link
             href="/tarifs"
-            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-blue-700 transition-colors hover:bg-blue-50"
+            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#0d0d12] px-6 py-3 text-sm font-semibold text-lime-300 transition-colors hover:bg-lime-400/[0.06]"
           >
             Démarrer gratuitement
             <ArrowRight className="h-4 w-4" />
@@ -48,15 +48,20 @@ export default function SiteFooter() {
         </div>
       </div>
 
-      <div className="border-t border-blue-200 bg-blue-50">
-        <div className="mx-auto max-w-6xl px-4 py-12">
-          <div className="grid gap-10 md:grid-cols-4">
+      <div className="border-t border-lime-400/25 bg-lime-400/[0.06]">
+        <div className="mx-auto max-w-6xl px-4 py-6">
+          <div className="grid gap-6 md:grid-cols-4">
             <div className="md:col-span-1">
-              <div className="flex items-center gap-2 font-semibold">
-                <Logo className="h-9 w-9" />
-                {site.name}
+              <div className="inline-flex items-center rounded-xl bg-slate-900 px-3 py-2">
+                <Image
+                  src="/logo.png"
+                  alt={site.name}
+                  width={160}
+                  height={52}
+                  className="h-9 w-auto"
+                />
               </div>
-              <p className="mt-3 max-w-xs text-sm text-slate-600">
+              <p className="mt-3 max-w-xs text-sm text-slate-300">
                 {site.tagline}. Conforme aux règles des plateformes et à la
                 législation sur la consommation.
               </p>
@@ -68,7 +73,7 @@ export default function SiteFooter() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="grid h-9 w-9 place-items-center rounded-full bg-white text-slate-600 ring-1 ring-blue-200 transition-colors hover:bg-blue-600 hover:text-white"
+                    className="grid h-9 w-9 place-items-center rounded-full bg-[#0d0d12] text-slate-300 ring-1 ring-green-200 transition-colors hover:bg-green-600 hover:text-white"
                   >
                     <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4" aria-hidden="true">
                       <path d={path} />
@@ -78,17 +83,17 @@ export default function SiteFooter() {
               </div>
                <div className="mt-5">
                  <div className="flex items-center gap-2">
-                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-100">
-                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-blue-700">
+                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-lime-400/10">
+                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-lime-300">
                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                        <polyline points="22,6 12,13 2,6" />
                      </svg>
                    </div>
                    <div>
-                     <p className="text-sm font-medium text-slate-900">
+                     <p className="text-sm font-medium text-white">
                        Recevez nos conseils e-réputation
                      </p>
-                     <p className="text-xs text-slate-500">
+                     <p className="text-xs text-slate-400">
                        Astuces, guides et actualités Google.
                      </p>
                    </div>
@@ -98,11 +103,11 @@ export default function SiteFooter() {
             </div>
 
             <div>
-              <h3 className="text-sm font-semibold text-slate-900">Navigation</h3>
-              <ul className="mt-3 space-y-2 text-sm text-slate-600">
+              <h3 className="text-sm font-semibold text-white">Navigation</h3>
+              <ul className="mt-3 space-y-2 text-sm text-slate-300">
                 {mainNav.map((item) => (
                   <li key={item.href}>
-                    <Link href={item.href} className="hover:text-blue-600">
+                    <Link href={item.href} className="hover:text-lime-400">
                       {item.label}
                     </Link>
                   </li>
@@ -111,17 +116,17 @@ export default function SiteFooter() {
             </div>
 
             <div>
-              <h3 className="text-sm font-semibold text-slate-900">Légal</h3>
-              <ul className="mt-3 space-y-2 text-sm text-slate-600">
+              <h3 className="text-sm font-semibold text-white">Légal</h3>
+              <ul className="mt-3 space-y-2 text-sm text-slate-300">
                 <li>
-                  <Link href="/mentions-legales" className="hover:text-blue-600">
+                  <Link href="/mentions-legales" className="hover:text-lime-400">
                     Mentions légales
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/confidentialite"
-                    className="hover:text-blue-600"
+                    className="hover:text-lime-400"
                   >
                     Politique de confidentialité
                   </Link>
@@ -130,8 +135,8 @@ export default function SiteFooter() {
             </div>
 
             <div>
-              <h3 className="text-sm font-semibold text-slate-900">Contact</h3>
-              <ul className="mt-3 space-y-2 text-sm text-slate-600">
+              <h3 className="text-sm font-semibold text-white">Contact</h3>
+              <ul className="mt-3 space-y-2 text-sm text-slate-300">
                 <li>{company.address.street}</li>
                 <li>
                   {company.address.city}, {company.address.region}{" "}
@@ -141,7 +146,7 @@ export default function SiteFooter() {
                 <li>
                   <a
                     href={`tel:${company.phone}`}
-                    className="hover:text-blue-600"
+                    className="hover:text-lime-400"
                   >
                     {company.phoneDisplay}
                   </a>
@@ -149,7 +154,7 @@ export default function SiteFooter() {
                 <li>
                   <a
                     href={`mailto:${company.email}`}
-                    className="hover:text-blue-600"
+                    className="hover:text-lime-400"
                   >
                     {company.email}
                   </a>
@@ -158,8 +163,8 @@ export default function SiteFooter() {
             </div>
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center gap-2 rounded-xl bg-white px-4 py-3 text-xs text-slate-500 ring-1 ring-blue-200">
-            <ShieldCheck className="h-4 w-4 text-blue-700" />
+          <div className="mt-6 flex flex-wrap items-center gap-2 rounded-xl bg-[#0d0d12] px-4 py-3 text-xs text-slate-400 ring-1 ring-green-200">
+            <ShieldCheck className="h-4 w-4 text-lime-300" />
             <span>
               Conforme aux règles Google, Trustpilot et à la loi sur la
               consommation. Aucun avis fictif n'est produit ou vendu.
@@ -167,8 +172,8 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        <div className="border-t border-blue-200">
-          <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-4 text-xs text-slate-500 sm:flex-row">
+        <div className="border-t border-lime-400/25">
+          <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-4 text-xs text-slate-400 sm:flex-row">
             <p>
               © {year} {company.legalName}. Tous droits réservés.
             </p>

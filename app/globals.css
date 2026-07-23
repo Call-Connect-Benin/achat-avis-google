@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --muted: #f8fafc;
-  --google-blue: #4285f4;
+  --background: #08080b;
+  --foreground: #f4f4f6;
+  --muted: #101015;
+  --google-blue: #16a34a;
   --google-red: #ea4335;
   --google-yellow: #fbbc05;
   --google-green: #34a853;
@@ -20,31 +20,42 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(60rem 40rem at 12% -8%, rgba(132, 204, 22, 0.12), transparent 60%),
+    radial-gradient(52rem 36rem at 92% 4%, rgba(250, 204, 21, 0.10), transparent 60%),
+    radial-gradient(60rem 50rem at 80% 108%, rgba(163, 230, 53, 0.08), transparent 60%),
+    var(--background);
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overflow-x: clip;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-serif), Georgia, serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
   letter-spacing: -0.01em;
 }
 
 ::selection {
-  background: #4285f4;
-  color: #ffffff;
+  background: #bef264;
+  color: #020617;
+}
+
+summary::-webkit-details-marker {
+  display: none;
 }
 
 :focus-visible {
-  outline: 2px solid #4285f4;
+  outline: 3px solid #a3e635;
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -55,5 +66,20 @@ h4 {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #4285f4;
+  color: #a3e635;
+  text-shadow: 0 0 18px rgba(163, 230, 53, 0.45);
+}
+
+/* Effets de halo réutilisables (thème sombre) */
+.glow-lime {
+  box-shadow: 0 0 0 1px rgba(163, 230, 53, 0.25), 0 18px 50px -12px rgba(132, 204, 22, 0.45);
+}
+.glow-yellow {
+  box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.25), 0 18px 50px -12px rgba(250, 204, 21, 0.4);
+}
+.text-glow-lime {
+  text-shadow: 0 0 22px rgba(163, 230, 53, 0.55);
+}
+.text-glow-yellow {
+  text-shadow: 0 0 22px rgba(250, 204, 21, 0.5);
 }

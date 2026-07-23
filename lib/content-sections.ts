@@ -5,22 +5,22 @@ type Context = "methode" | "gestion" | "secteur" | "ville" | "metier" | "princip
 function pickReviews(seed: string): { name: string; city: string; color: string }[] {
   const sets: Record<string, { name: string; city: string; color: string }[]> = {
     default: [
-      { name: "Camille", city: "Lyon", color: "bg-blue-500" },
+      { name: "Camille", city: "Lyon", color: "bg-green-500" },
       { name: "Karim", city: "Paris", color: "bg-emerald-500" },
       { name: "Sylvie", city: "Nice", color: "bg-amber-500" },
     ],
     restaurant: [
       { name: "Jean-Marc", city: "Marseille", color: "bg-rose-500" },
       { name: "Sophie", city: "Lyon", color: "bg-emerald-500" },
-      { name: "Pierre", city: "Paris", color: "bg-blue-500" },
+      { name: "Pierre", city: "Paris", color: "bg-green-500" },
     ],
     artisan: [
       { name: "Alain", city: "Bordeaux", color: "bg-amber-500" },
-      { name: "Chloé", city: "Nantes", color: "bg-sky-500" },
+      { name: "Chloé", city: "Nantes", color: "bg-lime-500" },
       { name: "Marc", city: "Lille", color: "bg-emerald-500" },
     ],
     sante: [
-      { name: "Dr. Lefevre", city: "Paris", color: "bg-blue-500" },
+      { name: "Dr. Lefevre", city: "Paris", color: "bg-green-500" },
       { name: "Nadia", city: "Toulouse", color: "bg-emerald-500" },
       { name: "Thomas", city: "Nice", color: "bg-rose-500" },
     ],

@@ -37,14 +37,14 @@ export default function HeroTestimonials() {
 
   return (
     <div className="relative w-full max-w-xs">
-      <div className="rounded-2xl bg-white/90 p-4 shadow-xl ring-1 ring-blue-100 backdrop-blur-sm">
+      <div className="rounded-2xl bg-[#0d0d12]/90 p-4 shadow-xl ring-1 ring-green-100 backdrop-blur-sm">
         <div className="mb-3 flex items-center gap-2">
           <span className="flex gap-0.5">
             {[...Array(5)].map((_, i) => (
               <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
             ))}
           </span>
-          <span className="text-xs font-semibold text-slate-700">
+          <span className="text-xs font-semibold text-slate-200">
             Avis clients en direct
           </span>
         </div>
@@ -58,11 +58,11 @@ export default function HeroTestimonials() {
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
             >
-              <p className="text-sm leading-snug text-slate-700">
+              <p className="text-sm leading-snug text-slate-200">
                 “{testimonials[index].text}”
               </p>
-              <p className="mt-2 flex items-center gap-1.5 text-xs font-medium text-slate-500">
-                <MapPin className="h-3 w-3 text-blue-600" />
+              <p className="mt-2 flex items-center gap-1.5 text-xs font-medium text-slate-400">
+                <MapPin className="h-3 w-3 text-lime-400" />
                 {testimonials[index].name} · {testimonials[index].role}
               </p>
             </motion.div>
@@ -74,21 +74,21 @@ export default function HeroTestimonials() {
             <span
               key={i}
               className={`h-1.5 flex-1 rounded-full transition-colors ${
-                i === index ? "bg-blue-600" : "bg-slate-200"
+                i === index ? "bg-green-600" : "bg-slate-200"
               }`}
             />
           ))}
         </div>
       </div>
 
-      <div className="mt-3 rounded-2xl bg-white/90 p-4 shadow-xl ring-1 ring-blue-100 backdrop-blur-sm">
+      <div className="mt-3 rounded-2xl bg-[#0d0d12]/90 p-4 shadow-xl ring-1 ring-green-100 backdrop-blur-sm">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-lime-400/10">
             <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
           </div>
           <div>
-            <p className="text-sm font-semibold text-slate-900">Note moyenne</p>
-            <p className="text-xs text-slate-500">+0.8 point en moyenne</p>
+            <p className="text-sm font-semibold text-white">Note moyenne</p>
+            <p className="text-xs text-slate-400">+0.8 point en moyenne</p>
           </div>
         </div>
       </div>

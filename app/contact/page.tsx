@@ -60,35 +60,35 @@ export default function ContactPage() {
   return (
     <div className="flex flex-col">
       <ContactFaqJsonLd />
-      <section className="relative overflow-hidden bg-blue-50">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-50 via-white to-white" />
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <section className="relative overflow-hidden bg-lime-400/[0.06]">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0d0f0a] via-[#101016] to-[#0d0d12]" />
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+            <span className="inline-flex items-center gap-2 rounded-full bg-lime-400/10 px-4 py-2 text-sm font-semibold text-lime-300">
               <MessageCircle className="h-4 w-4" />
               Contact
             </span>
-            <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+            <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
               Parlons de votre{" "}
-              <span className="text-blue-700">e-réputation</span>
+              <span className="text-lime-300">e-réputation</span>
             </h1>
-            <p className="mt-6 text-lg leading-8 text-slate-600">
+            <p className="mt-6 text-lg leading-8 text-slate-300">
               Une question ? Un projet ? Notre équipe vous répond sous 24h ouvrées.
             </p>
           </AnimatedSection>
         </div>
       </section>
 
-      <section className="py-16 sm:py-24">
+      <section className="py-8 sm:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
             <div>
               <AnimatedSection>
-                <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-                  <h2 className="text-2xl font-bold text-slate-900">
+                <div className="rounded-3xl border border-white/10 bg-[#0d0d12] p-8 shadow-sm">
+                  <h2 className="text-2xl font-bold text-white">
                     Envoyez-nous un message
                   </h2>
-                  <p className="mt-2 text-sm text-slate-600">
+                  <p className="mt-2 text-sm text-slate-300">
                     Remplissez le formulaire et un conseiller vous recontacte sous 24 h.
                   </p>
                   <div className="mt-8">
@@ -98,20 +98,20 @@ export default function ContactPage() {
               </AnimatedSection>
             </div>
 
-            <div className="space-y-8">
+            <div className="space-y-6">
               <AnimatedSection delay={0.1}>
-                <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-                  <h3 className="text-xl font-bold text-slate-900">
+                <div className="rounded-3xl border border-white/10 bg-[#0d0d12] p-8 shadow-sm">
+                  <h3 className="text-xl font-bold text-white">
                     Informations de contact
                   </h3>
                   <div className="mt-6 space-y-5">
                     <div className="flex items-start gap-4">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-100">
-                        <MapPin className="h-5 w-5 text-blue-700" />
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-lime-400/10">
+                        <MapPin className="h-5 w-5 text-lime-300" />
                       </div>
                       <div>
-                        <p className="text-sm font-semibold text-slate-900">Adresse</p>
-                        <p className="text-sm text-slate-600">
+                        <p className="text-sm font-semibold text-white">Adresse</p>
+                        <p className="text-sm text-slate-300">
                           {company.address.street}
                           <br />
                           {company.address.city}, {company.address.region}{" "}
@@ -122,28 +122,28 @@ export default function ContactPage() {
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-100">
-                        <Phone className="h-5 w-5 text-blue-700" />
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-lime-400/10">
+                        <Phone className="h-5 w-5 text-lime-300" />
                       </div>
                       <div>
-                        <p className="text-sm font-semibold text-slate-900">Téléphone</p>
+                        <p className="text-sm font-semibold text-white">Téléphone</p>
                         <a
                           href={`tel:${company.phone}`}
-                          className="text-sm text-sky-700 hover:text-sky-800"
+                          className="text-sm text-lime-700 hover:text-lime-800"
                         >
                           {company.phoneDisplay}
                         </a>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-100">
-                        <Mail className="h-5 w-5 text-blue-700" />
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-lime-400/10">
+                        <Mail className="h-5 w-5 text-lime-300" />
                       </div>
                       <div>
-                        <p className="text-sm font-semibold text-slate-900">Email</p>
+                        <p className="text-sm font-semibold text-white">Email</p>
                         <a
                           href={`mailto:${company.email}`}
-                          className="text-sm text-sky-700 hover:text-sky-800"
+                          className="text-sm text-lime-700 hover:text-lime-800"
                         >
                           {company.email}
                         </a>
@@ -154,23 +154,23 @@ export default function ContactPage() {
               </AnimatedSection>
 
               <AnimatedSection delay={0.2}>
-                <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-                  <h3 className="text-xl font-bold text-slate-900">
+                <div className="rounded-3xl border border-white/10 bg-[#0d0d12] p-8 shadow-sm">
+                  <h3 className="text-xl font-bold text-white">
                     Horaires d'ouverture
                   </h3>
                   <div className="mt-6 space-y-4">
                     {hours.map((item) => (
                       <div
                         key={item.day}
-                        className="flex items-center justify-between border-b border-slate-100 pb-3 last:border-0 last:pb-0"
+                        className="flex items-center justify-between border-b border-white/[0.07] pb-3 last:border-0 last:pb-0"
                       >
                         <div className="flex items-center gap-3">
-                          <Clock className="h-4 w-4 text-blue-600" />
-                          <span className="text-sm font-medium text-slate-700">
+                          <Clock className="h-4 w-4 text-lime-400" />
+                          <span className="text-sm font-medium text-slate-200">
                             {item.day}
                           </span>
                         </div>
-                        <span className="text-sm text-slate-600">{item.time}</span>
+                        <span className="text-sm text-slate-300">{item.time}</span>
                       </div>
                     ))}
                   </div>
@@ -178,8 +178,8 @@ export default function ContactPage() {
               </AnimatedSection>
 
               <AnimatedSection delay={0.3}>
-                <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-                  <h3 className="text-xl font-bold text-slate-900">
+                <div className="rounded-3xl border border-white/10 bg-[#0d0d12] p-8 shadow-sm">
+                  <h3 className="text-xl font-bold text-white">
                     Suivez-nous
                   </h3>
                   <div className="mt-6 flex flex-wrap gap-3">
@@ -188,7 +188,7 @@ export default function ContactPage() {
                         href={site.social.facebook}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-blue-300 hover:bg-blue-50"
+                        className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-lime-400/35 hover:bg-lime-400/[0.06]"
                       >
                         <Globe className="h-4 w-4" />
                         Facebook
@@ -199,7 +199,7 @@ export default function ContactPage() {
                         href={site.social.linkedin}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-blue-300 hover:bg-blue-50"
+                        className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-lime-400/35 hover:bg-lime-400/[0.06]"
                       >
                         <Globe className="h-4 w-4" />
                         LinkedIn
@@ -210,7 +210,7 @@ export default function ContactPage() {
                         href={site.social.instagram}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-blue-300 hover:bg-blue-50"
+                        className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-lime-400/35 hover:bg-lime-400/[0.06]"
                       >
                         <Globe className="h-4 w-4" />
                         Instagram
@@ -224,19 +224,19 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-white py-16 sm:py-24">
+      <section className="bg-[#0d0d12] py-8 sm:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Où nous trouver
             </h2>
-            <p className="mt-4 text-lg text-slate-600">
+            <p className="mt-4 text-lg text-slate-300">
               Venez nous rencontrer dans notre bureau au cœur de Paris.
             </p>
           </AnimatedSection>
 
-          <AnimatedSection delay={0.1} className="mt-10">
-            <div className="overflow-hidden rounded-3xl border border-slate-200 shadow-sm">
+          <AnimatedSection delay={0.1} className="mt-6">
+            <div className="overflow-hidden rounded-3xl border border-white/10 shadow-sm">
               <iframe
                 title="Achat Avis Google - 23 Rue des Grands Augustins, 75006 Paris"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.2159!2d2.3456!3d48.8534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e671d5c4b4c3c5%3A0xc1c3c3c3c3c3c3c3!2s23%20Rue%20des%20Grands%20Augustins%2C%2075006%20Paris!5e0!3m2!1sfr!2sfr!4v1690000000000"
@@ -253,18 +253,18 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-sky-50 py-16 sm:py-24">
+      <section className="bg-yellow-300/[0.06] py-8 sm:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Ce que disent nos clients
             </h2>
-            <p className="mt-4 text-lg text-slate-600">
+            <p className="mt-4 text-lg text-slate-300">
               Ils nous font confiance pour améliorer leur e-réputation.
             </p>
           </AnimatedSection>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
+          <div className="mt-6 grid gap-6 md:grid-cols-3">
             {[
               {
                 name: "Pierre L.",
@@ -286,7 +286,7 @@ export default function ContactPage() {
               },
             ].map((testimonial, index) => (
               <AnimatedSection key={testimonial.name} delay={index * 0.1}>
-                <div className="flex h-full flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md">
+                <div className="flex h-full flex-col rounded-3xl border border-white/10 bg-[#0d0d12] p-6 shadow-sm transition-all duration-300 hover:shadow-md">
                   <div className="flex gap-0.5">
                     {[...Array(5)].map((_, i) => (
                       <svg
@@ -298,7 +298,7 @@ export default function ContactPage() {
                       </svg>
                     ))}
                   </div>
-                  <p className="mt-4 flex-1 text-sm text-slate-600">"{testimonial.text}"</p>
+                  <p className="mt-4 flex-1 text-sm text-slate-300">"{testimonial.text}"</p>
                   <div className="mt-4 flex items-center gap-3">
                     <span className="relative h-10 w-10 overflow-hidden rounded-full">
                       <Image
@@ -310,10 +310,10 @@ export default function ContactPage() {
                       />
                     </span>
                     <div>
-                      <p className="text-sm font-semibold text-slate-900">
+                      <p className="text-sm font-semibold text-white">
                         {testimonial.name}
                       </p>
-                      <p className="text-xs text-slate-500">{testimonial.role}</p>
+                      <p className="text-xs text-slate-400">{testimonial.role}</p>
                     </div>
                   </div>
                 </div>
@@ -323,18 +323,18 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-blue-50 py-16 sm:py-24">
+      <section className="bg-lime-400/[0.06] py-8 sm:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Nous sommes là pour vous
             </h2>
-            <p className="mt-4 text-lg text-slate-600">
+            <p className="mt-4 text-lg text-slate-300">
               Une équipe dédiée pour vous accompagner à chaque étape.
             </p>
           </AnimatedSection>
 
-          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 icon: MessageCircle,
@@ -360,14 +360,14 @@ export default function ContactPage() {
               const Icon = item.icon;
               return (
                 <AnimatedSection key={item.title} delay={index * 0.1}>
-                  <div className="h-full rounded-3xl bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100">
-                      <Icon className="h-6 w-6 text-blue-700" />
+                  <div className="h-full rounded-3xl bg-[#0d0d12] p-6 shadow-sm transition-all duration-300 hover:shadow-md">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-lime-400/10">
+                      <Icon className="h-6 w-6 text-lime-300" />
                     </div>
-                    <h3 className="mt-4 text-lg font-bold text-slate-900">
+                    <h3 className="mt-4 text-lg font-bold text-white">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-sm text-slate-600">
+                    <p className="mt-2 text-sm text-slate-300">
                       {item.description}
                     </p>
                   </div>
@@ -378,30 +378,30 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24">
+      <section className="py-8 sm:py-10">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Questions fréquentes
             </h2>
-            <p className="mt-4 text-lg text-slate-600">
+            <p className="mt-4 text-lg text-slate-300">
               Tout ce qu'il faut savoir sur le contact et nos services.
             </p>
           </AnimatedSection>
 
-          <div className="mt-10 space-y-3">
+          <div className="mt-6 space-y-3">
             {contactFaqs.map((f, i) => (
               <AnimatedSection key={f.q} delay={i * 0.05}>
                 <details
-                  className="group rounded-2xl bg-white p-5 shadow-sm transition hover:shadow-md [&_summary::-webkit-details-marker]:hidden"
+                  className="group rounded-2xl bg-[#0d0d12] p-5 shadow-sm transition hover:shadow-md"
                 >
-                  <summary className="flex cursor-pointer list-none items-center justify-between font-medium text-slate-900">
+                  <summary className="flex cursor-pointer list-none items-center justify-between font-medium text-white">
                     {f.q}
                     <span className="ml-4 text-slate-400 transition-transform group-open:rotate-45">
                       +
                     </span>
                   </summary>
-                  <p className="mt-3 text-sm text-slate-600">{f.a}</p>
+                  <p className="mt-3 text-sm text-slate-300">{f.a}</p>
                 </details>
               </AnimatedSection>
             ))}
@@ -409,7 +409,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-slate-900 py-16 sm:py-24">
+      <section className="bg-slate-900 py-8 sm:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
@@ -418,10 +418,10 @@ export default function ContactPage() {
             <p className="mt-4 text-lg text-slate-300">
               Rejoignez plus de 2 000 entreprises qui nous font confiance.
             </p>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="rounded-full bg-blue-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-blue-400 hover:shadow-xl"
+                className="rounded-full bg-lime-400/[0.06]0 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-green-400 hover:shadow-xl"
               >
                 Faire une demande
               </Link>

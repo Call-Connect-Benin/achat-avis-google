@@ -66,7 +66,7 @@ const terms = [
 
 export default function Glossary() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-20">
+    <section className="mx-auto max-w-6xl px-4 py-10">
       <AnimatedSection>
         <SectionHeading
           eyebrow="Glossaire"
@@ -75,12 +75,12 @@ export default function Glossary() {
         />
       </AnimatedSection>
 
-      <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {terms.map((t, i) => (
           <AnimatedSection key={t.term} delay={(i % 3) * 0.1}>
-            <div className="h-full rounded-2xl border border-slate-200 bg-white p-6">
-              <h3 className="font-semibold text-slate-900">{t.term}</h3>
-              <p className="mt-2 text-sm text-slate-600">{t.definition}</p>
+            <div className="h-full rounded-2xl border border-white/10 bg-[#0d0d12] p-6">
+              <h3 className="font-semibold text-white">{t.term}</h3>
+              <p className="mt-2 text-sm text-slate-300">{t.definition}</p>
             </div>
           </AnimatedSection>
         ))}

@@ -529,30 +529,30 @@ export default async function GestionPage({
 
   return (
     <div className="flex flex-col">
-      <section className="relative overflow-hidden bg-blue-50">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-50 via-white to-white" />
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <section className="relative overflow-hidden bg-lime-400/[0.06]">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0d0f0a] via-[#101016] to-[#0d0d12]" />
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+            <span className="inline-flex items-center gap-2 rounded-full bg-lime-400/10 px-4 py-2 text-sm font-semibold text-lime-300">
               <Icon className="h-4 w-4" />
               {gestion.eyebrow}
             </span>
-            <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+            <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
               {gestion.title}
             </h1>
-            <p className="mt-6 text-lg leading-8 text-slate-600">
+            <p className="mt-6 text-lg leading-8 text-slate-300">
               {gestion.heroLead}
             </p>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="rounded-full bg-blue-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-blue-700 hover:shadow-xl"
+                className="rounded-full bg-green-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-green-700 hover:shadow-xl"
               >
                 Nous contacter
               </Link>
               <Link
                 href="/contact"
-                className="rounded-full border border-blue-300 bg-white px-8 py-3.5 text-base font-semibold text-slate-700 transition-all hover:bg-blue-50"
+                className="rounded-full border border-lime-400/35 bg-[#0d0d12] px-8 py-3.5 text-base font-semibold text-slate-200 transition-all hover:bg-lime-400/[0.06]"
               >
                 S'inscrire gratuitement
               </Link>
@@ -561,28 +561,28 @@ export default async function GestionPage({
         </div>
       </section>
 
-      <section className="bg-blue-50 py-16 sm:py-24">
+      <section className="bg-lime-400/[0.06] py-8 sm:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Guide étape par étape
             </h2>
-            <p className="mt-4 text-lg text-slate-600">
+            <p className="mt-4 text-lg text-slate-300">
               Suivez ces 4 étapes pour gérer efficacement votre situation.
             </p>
           </AnimatedSection>
 
-          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {gestion.steps.map((step, index) => (
               <AnimatedSection key={step.title} delay={index * 0.1}>
-                <div className="relative h-full rounded-3xl bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md">
-                  <span className="text-5xl font-extrabold text-blue-200">
+                <div className="relative h-full rounded-3xl bg-[#0d0d12] p-8 shadow-sm transition-all duration-300 hover:shadow-md">
+                  <span className="text-5xl font-extrabold text-green-200">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="mt-4 text-xl font-bold text-slate-900">
+                  <h3 className="mt-4 text-xl font-bold text-white">
                     {step.title}
                   </h3>
-                  <p className="mt-3 text-base leading-7 text-slate-600">
+                  <p className="mt-3 text-base leading-7 text-slate-300">
                     {step.description}
                   </p>
                 </div>
@@ -593,20 +593,20 @@ export default async function GestionPage({
       </section>
 
       {gestion.warning && (
-        <section className="py-8 sm:py-12">
+        <section className="py-8 sm:py-6">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <AnimatedSection>
-              <div className="flex items-start gap-4 rounded-3xl border border-blue-300 bg-blue-50 p-6 sm:p-8">
+              <div className="flex items-start gap-4 rounded-3xl border border-lime-400/35 bg-lime-400/[0.06] p-6 sm:p-8">
                 <div className="flex-shrink-0">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100">
-                    <AlertTriangle className="h-6 w-6 text-blue-700" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-lime-400/10">
+                    <AlertTriangle className="h-6 w-6 text-lime-300" />
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-blue-700">
+                  <h3 className="text-lg font-semibold text-lime-300">
                     {gestion.warning.title}
                   </h3>
-                  <p className="mt-2 text-base leading-7 text-slate-600">
+                  <p className="mt-2 text-base leading-7 text-slate-300">
                     {gestion.warning.text}
                   </p>
                 </div>
@@ -616,31 +616,31 @@ export default async function GestionPage({
         </section>
       )}
 
-      <section className="py-16 sm:py-24">
+      <section className="py-8 sm:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Conseils et bonnes pratiques
             </h2>
-            <p className="mt-4 text-lg text-slate-600">
+            <p className="mt-4 text-lg text-slate-300">
               Les réflexes à adopter pour protéger et améliorer votre e-réputation.
             </p>
           </AnimatedSection>
 
-          <div className="mt-16 grid gap-8 md:grid-cols-2">
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
             {gestion.tips.map((tip, index) => (
               <AnimatedSection key={tip.title} delay={index * 0.1}>
-                <div className="flex h-full items-start gap-4 rounded-3xl border border-blue-200 bg-white p-8 transition-all duration-300 hover:shadow-lg hover:border-blue-400">
+                <div className="flex h-full items-start gap-4 rounded-3xl border border-lime-400/25 bg-[#0d0d12] p-8 transition-all duration-300 hover:shadow-lg hover:border-green-400">
                   <div className="flex-shrink-0">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100">
-                      <CheckCircle2 className="h-6 w-6 text-blue-700" />
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-lime-400/10">
+                      <CheckCircle2 className="h-6 w-6 text-lime-300" />
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900">
+                    <h3 className="text-xl font-bold text-white">
                       {tip.title}
                     </h3>
-                    <p className="mt-2 text-base leading-7 text-slate-600">
+                    <p className="mt-2 text-base leading-7 text-slate-300">
                       {tip.description}
                     </p>
                   </div>
@@ -664,7 +664,7 @@ export default async function GestionPage({
         })}
       />
 
-      <section className="bg-slate-900 py-16 sm:py-24">
+      <section className="bg-slate-900 py-8 sm:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
@@ -673,10 +673,10 @@ export default async function GestionPage({
             <p className="mt-4 text-lg text-slate-300">
               Notre équipe vous accompagne dans la gestion de votre e-réputation.
             </p>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="rounded-full bg-blue-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-blue-400 hover:shadow-xl"
+                className="rounded-full bg-lime-400/[0.06]0 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-green-400 hover:shadow-xl"
               >
                 Nous contacter
                 <ArrowRight className="ml-2 inline h-4 w-4" />

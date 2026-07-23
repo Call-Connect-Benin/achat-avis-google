@@ -44,18 +44,18 @@ export const metadata = {
 
 export default function EreputationPage() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-16">
+    <section className="mx-auto max-w-6xl px-4 py-8">
       <div className="mx-auto max-w-2xl text-center">
-        <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+        <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
           Prenez le contrôle de votre e-réputation
         </h1>
-        <p className="mt-4 text-slate-600">
+        <p className="mt-4 text-slate-300">
           Votre réputation en ligne se construit chaque jour. Nous vous aidons à
           la piloter avec des avis authentiques et une présence soignée.
         </p>
       </div>
 
-      <div className="relative aspect-[21/9] w-full overflow-hidden rounded-3xl bg-slate-100">
+      <div className="relative aspect-[21/9] w-full overflow-hidden rounded-3xl bg-[#17171f]">
         <Image
           src="/images/img-04.png"
           alt="Gestion de la e-réputation en entreprise"
@@ -65,19 +65,19 @@ export default function EreputationPage() {
         />
       </div>
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((s) => (
           <div
             key={s.title}
-            className="rounded-2xl border border-slate-200 bg-white p-6"
+            className="rounded-2xl border border-white/10 bg-[#0d0d12] p-6"
           >
-            <h3 className="font-semibold text-slate-900">{s.title}</h3>
-            <p className="mt-2 text-sm text-slate-600">{s.description}</p>
+            <h3 className="font-semibold text-white">{s.title}</h3>
+            <p className="mt-2 text-sm text-slate-300">{s.description}</p>
           </div>
         ))}
       </div>
 
-      <p className="mx-auto mt-12 max-w-2xl text-center text-sm text-slate-500">
+      <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-slate-400">
         Notre approche repose exclusivement sur des avis réels. Nous ne
         fabriquons ni ne vendons d'avis : chaque avis collecté émane d'un
         client ayant véritablement utilisé votre service.

@@ -34,7 +34,7 @@ const tools = [
 
 export default function Tools() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-20">
+    <section className="mx-auto max-w-6xl px-4 py-10">
       <AnimatedSection>
         <SectionHeading
           eyebrow="Outils"
@@ -43,28 +43,28 @@ export default function Tools() {
         />
       </AnimatedSection>
 
-      <div className="mt-12 grid gap-6 md:grid-cols-2">
+      <div className="mt-6 grid gap-6 md:grid-cols-2">
         {tools.map((t, i) => {
           const Icon = t.icon;
           return (
             <AnimatedSection key={t.href} delay={i * 0.1}>
-              <div className="flex h-full flex-col rounded-2xl bg-blue-50 p-6 transition hover:-translate-y-0.5 hover:shadow-sm">
-                <Icon className="h-7 w-7 text-blue-700" strokeWidth={1.5} />
-                <h3 className="mt-4 font-semibold text-slate-900">{t.title}</h3>
-                <p className="mt-2 text-sm text-slate-600">
+              <div className="flex h-full flex-col rounded-2xl bg-lime-400/[0.06] p-6 transition hover:-translate-y-0.5 hover:shadow-sm">
+                <Icon className="h-7 w-7 text-lime-300" strokeWidth={1.5} />
+                <h3 className="mt-4 font-semibold text-white">{t.title}</h3>
+                <p className="mt-2 text-sm text-slate-300">
                   {t.description}
                 </p>
                 <ul className="mt-4 space-y-2">
                   {t.points.map((p) => (
-                    <li key={p} className="flex items-start gap-2 text-xs text-slate-600">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500" />
+                    <li key={p} className="flex items-start gap-2 text-xs text-slate-300">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-lime-400/[0.06]0" />
                       {p}
                     </li>
                   ))}
                 </ul>
                 <Link
                   href={t.href}
-                  className="mt-4 inline-flex w-fit rounded-full bg-blue-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
+                  className="mt-4 inline-flex w-fit rounded-full bg-green-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-green-700"
                 >
                   {t.cta}
                 </Link>

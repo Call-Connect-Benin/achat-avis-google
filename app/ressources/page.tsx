@@ -70,52 +70,52 @@ const resources = [
 export default function RessourcesPage() {
   return (
     <div className="flex flex-col">
-      <section className="relative overflow-hidden bg-blue-50">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-50 via-white to-white" />
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <section className="relative overflow-hidden bg-lime-400/[0.06]">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0d0f0a] via-[#101016] to-[#0d0d12]" />
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+            <span className="inline-flex items-center gap-2 rounded-full bg-lime-400/10 px-4 py-2 text-sm font-semibold text-lime-300">
               Ressources
             </span>
-            <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+            <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
               Guides et ressources{" "}
-              <span className="text-blue-700">e-réputation</span>
+              <span className="text-lime-300">e-réputation</span>
             </h1>
-            <p className="mt-6 text-lg leading-8 text-slate-600">
+            <p className="mt-6 text-lg leading-8 text-slate-300">
               Modèles, guides pratiques et outils pour améliorer votre visibilité locale et collecter des avis authentiques.
             </p>
           </AnimatedSection>
         </div>
       </section>
 
-      <section className="py-16 sm:py-24">
+      <section className="py-8 sm:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Tout pour réussir votre e-réputation
             </h2>
-            <p className="mt-4 text-lg text-slate-600">
+            <p className="mt-4 text-lg text-slate-300">
               Des contenus détaillés, des exemples concrets et des outils gratuits pour passer à l'action.
             </p>
           </AnimatedSection>
 
-          <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {resources.map((r, index) => (
               <AnimatedSection key={r.title} delay={index * 0.05}>
                 <Link
                   href={r.href}
-                  className="flex h-full flex-col rounded-3xl border border-slate-200 bg-white p-8 transition hover:-translate-y-1 hover:shadow-lg"
+                  className="flex h-full flex-col rounded-3xl border border-white/10 bg-[#0d0d12] p-8 transition hover:-translate-y-1 hover:shadow-lg"
                 >
-                  <span className="inline-flex w-fit rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
+                  <span className="inline-flex w-fit rounded-full bg-lime-400/[0.06] px-3 py-1 text-xs font-semibold text-lime-300">
                     {r.tag}
                   </span>
-                  <h3 className="mt-4 text-xl font-bold text-slate-900">
+                  <h3 className="mt-4 text-xl font-bold text-white">
                     {r.title}
                   </h3>
-                  <p className="mt-2 text-base leading-7 text-slate-600">
+                  <p className="mt-2 text-base leading-7 text-slate-300">
                     {r.description}
                   </p>
-                  <span className="mt-auto pt-4 text-sm font-semibold text-sky-700">
+                  <span className="mt-auto pt-4 text-sm font-semibold text-lime-700">
                     Lire le guide →
                   </span>
                 </Link>
@@ -125,7 +125,7 @@ export default function RessourcesPage() {
         </div>
       </section>
 
-      <section className="bg-slate-900 py-16 sm:py-24">
+      <section className="bg-slate-900 py-8 sm:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
@@ -134,10 +134,10 @@ export default function RessourcesPage() {
             <p className="mt-4 text-lg text-slate-300">
               Contactez-nous pour une consultation gratuite et personnalisée.
             </p>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="rounded-full bg-blue-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-blue-700 hover:shadow-xl"
+                className="rounded-full bg-green-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-green-700 hover:shadow-xl"
               >
                 Nous contacter
               </Link>

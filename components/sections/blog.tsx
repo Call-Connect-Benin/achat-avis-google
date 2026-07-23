@@ -44,7 +44,7 @@ const articles = [
 
 export default function BlogSection() {
   return (
-    <section className="bg-sky-50 py-20">
+    <section className="bg-yellow-300/[0.06] py-10">
       <div className="mx-auto max-w-6xl px-4">
         <AnimatedSection>
           <SectionHeading
@@ -54,12 +54,12 @@ export default function BlogSection() {
           />
         </AnimatedSection>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {articles.map((a, i) => (
             <AnimatedSection key={a.title} delay={i * 0.1}>
-              <article className="flex h-full flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-sky-100 transition hover:-translate-y-1 hover:shadow-md">
-                <div className="flex items-center justify-between text-xs text-slate-500">
-                  <span className="rounded-full bg-sky-100 px-2.5 py-1 font-semibold text-sky-700">
+              <article className="flex h-full flex-col rounded-2xl bg-[#0d0d12] p-6 shadow-sm ring-1 ring-lime-100 transition hover:-translate-y-1 hover:shadow-md">
+                <div className="flex items-center justify-between text-xs text-slate-400">
+                  <span className="rounded-full bg-lime-100 px-2.5 py-1 font-semibold text-lime-700">
                     {a.category}
                   </span>
                   <span className="flex items-center gap-1">
@@ -67,15 +67,15 @@ export default function BlogSection() {
                     {a.readTime}
                   </span>
                 </div>
-                <h3 className="mt-3 font-semibold text-slate-900 leading-snug">
+                <h3 className="mt-3 font-semibold text-white leading-snug">
                   {a.title}
                 </h3>
-                <p className="mt-2 flex-1 text-sm text-slate-600">{a.excerpt}</p>
+                <p className="mt-2 flex-1 text-sm text-slate-300">{a.excerpt}</p>
                 <div className="mt-4 flex items-center justify-between">
-                  <span className="text-xs text-slate-500">{a.date}</span>
+                  <span className="text-xs text-slate-400">{a.date}</span>
                   <Link
                     href={a.href}
-                    className="inline-flex items-center gap-1 text-sm font-semibold text-sky-600 hover:text-sky-700"
+                    className="inline-flex items-center gap-1 text-sm font-semibold text-lime-600 hover:text-lime-700"
                   >
                     Lire l'article
                     <ArrowRight className="h-4 w-4 transition-transform hover:translate-x-1" />
@@ -87,10 +87,10 @@ export default function BlogSection() {
         </div>
 
         <AnimatedSection delay={0.2}>
-          <div className="mt-10 text-center">
+          <div className="mt-6 text-center">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 rounded-full bg-sky-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-sky-700"
+              className="inline-flex items-center gap-2 rounded-full bg-lime-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-lime-700"
             >
               Voir tous les articles
               <ArrowRight className="h-4 w-4" />

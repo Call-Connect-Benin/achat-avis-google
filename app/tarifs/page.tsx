@@ -12,11 +12,11 @@ export const metadata = {
 export default function TarifsPage() {
   return (
     <>
-      <section className="mx-auto max-w-6xl px-4 pt-16 text-center">
-        <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+      <section className="mx-auto max-w-6xl px-4 pt-10 text-center">
+        <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
           Des tarifs adaptés à chaque ambition
         </h1>
-        <p className="mx-auto mt-4 max-w-xl text-slate-600">
+        <p className="mx-auto mt-4 max-w-xl text-slate-300">
           Que vous soyez un indépendant ou un réseau multi-établissements,
           choisissez la formule qui collecte vos avis réels.
         </p>

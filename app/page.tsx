@@ -14,15 +14,19 @@ import CaseStudies from "@/components/sections/case-studies";
 import Blog from "@/components/sections/blog";
 import Glossary from "@/components/sections/glossary";
 import Faq from "@/components/faq";
+import ActionPlan from "@/components/sections/action-plan";
+import DashboardPreview from "@/components/sections/dashboard-preview";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <Stats />
+      <DashboardPreview />
       <HowItWorks />
       <Advantages />
       <Services />
+      <ActionPlan />
       <Pricing />
       <RoiCalculator />
       <Platforms />

@@ -9,18 +9,18 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="bg-blue-600 py-16">
+    <section className="border-y border-lime-400/20 bg-slate-950 py-8">
       <AnimatedSection>
         <div className="mx-auto max-w-6xl px-4">
-          <p className="mb-10 text-center text-sm font-medium uppercase tracking-wider text-blue-200">
+          <p className="mb-6 text-center text-sm font-bold uppercase tracking-wider text-lime-300">
             Une méthode éprouvée, des résultats mesurables
           </p>
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+          <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
             {stats.map((s) => (
               <div key={s.label} className="text-center">
-                <p className="text-3xl font-bold text-white">{s.value}</p>
-                <p className="mt-2 text-sm font-semibold text-blue-50">{s.label}</p>
-                <p className="mt-1 text-xs text-blue-200">{s.detail}</p>
+                <p className="text-3xl font-black text-yellow-300">{s.value}</p>
+                <p className="mt-2 text-sm font-bold text-white">{s.label}</p>
+                <p className="mt-1 text-xs leading-relaxed text-slate-400">{s.detail}</p>
               </div>
             ))}
           </div>

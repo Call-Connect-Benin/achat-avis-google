@@ -25,7 +25,7 @@ export default function LinkQr({ url }: { url: string }) {
         // eslint-disable-next-line @next/next/no-img-element
         <img src={qr} alt="QR code du lien d'avis" width={140} height={140} />
       ) : (
-        <div className="h-[140px] w-[140px] animate-pulse rounded-lg bg-slate-100" />
+        <div className="h-[140px] w-[140px] animate-pulse rounded-lg bg-[#17171f]" />
       )}
       <button
         type="button"
@@ -34,7 +34,7 @@ export default function LinkQr({ url }: { url: string }) {
           setCopied(true);
           setTimeout(() => setCopied(false), 1500);
         }}
-        className="text-xs font-medium text-slate-700 hover:underline"
+        className="text-xs font-medium text-slate-200 hover:underline"
       >
         {copied ? "Copié" : "Copier le lien"}
       </button>

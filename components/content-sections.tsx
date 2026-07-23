@@ -27,42 +27,42 @@ export type ContentSectionsData = {
 
 export default function ContentSections({ data }: { data: ContentSectionsData }) {
   return (
-    <section className="border-t border-slate-200 bg-white py-16 sm:py-24">
+    <section className="border-t border-white/10 bg-[#0d0d12] py-8 sm:py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-blue-700">{data.eyebrow}</p>
+          <p className="text-sm font-semibold uppercase tracking-wider text-lime-300">{data.eyebrow}</p>
         </AnimatedSection>
 
         {/* Section 1 : texte à gauche + texte à droite */}
-        <div className="mt-12 grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className="mt-6 grid items-start gap-6 lg:grid-cols-2 lg:gap-8">
           <AnimatedSection>
-            <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
               {data.titleLeft}
             </h2>
-            <p className="mt-4 text-lg leading-relaxed text-slate-600">{data.textLeft1}</p>
-            <p className="mt-4 text-lg leading-relaxed text-slate-600">{data.textLeft2}</p>
+            <p className="mt-4 text-lg leading-relaxed text-slate-300">{data.textLeft1}</p>
+            <p className="mt-4 text-lg leading-relaxed text-slate-300">{data.textLeft2}</p>
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
-            <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
               {data.titleRight}
             </h2>
-            <p className="mt-4 text-lg leading-relaxed text-slate-600">{data.textRight1}</p>
-            <p className="mt-4 text-lg leading-relaxed text-slate-600">{data.textRight2}</p>
+            <p className="mt-4 text-lg leading-relaxed text-slate-300">{data.textRight1}</p>
+            <p className="mt-4 text-lg leading-relaxed text-slate-300">{data.textRight2}</p>
           </AnimatedSection>
         </div>
 
         {/* Section 2 : texte à gauche + image à droite */}
-        <div className="mt-16 grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className="mt-8 grid items-center gap-6 lg:grid-cols-2 lg:gap-8">
           <AnimatedSection>
-            <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
               {data.titleImage}
             </h2>
-            <p className="mt-4 text-lg leading-relaxed text-slate-600">{data.textImage}</p>
+            <p className="mt-4 text-lg leading-relaxed text-slate-300">{data.textImage}</p>
             <ul className="mt-6 space-y-3">
               {data.bullets.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-slate-700">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
+                <li key={item} className="flex items-start gap-3 text-slate-200">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-lime-400" />
                   <span className="text-base">{item}</span>
                 </li>
               ))}
@@ -81,13 +81,13 @@ export default function ContentSections({ data }: { data: ContentSectionsData })
         </div>
 
         {/* Section 3 : texte à gauche + illustration HTML/CSS/JS à droite */}
-        <div className="mt-16 grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className="mt-8 grid items-center gap-6 lg:grid-cols-2 lg:gap-8">
           <AnimatedSection>
-            <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
               {data.titleIllustration}
             </h2>
-            <p className="mt-4 text-lg leading-relaxed text-slate-600">{data.textIllustration1}</p>
-            <p className="mt-4 text-lg leading-relaxed text-slate-600">{data.textIllustration2}</p>
+            <p className="mt-4 text-lg leading-relaxed text-slate-300">{data.textIllustration1}</p>
+            <p className="mt-4 text-lg leading-relaxed text-slate-300">{data.textIllustration2}</p>
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
@@ -107,9 +107,9 @@ function ReviewPulse({
   reviews: { name: string; city: string; color: string }[];
 }) {
   return (
-    <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-900 p-8 shadow-lg">
+    <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-slate-900 p-8 shadow-lg">
       <div className="flex items-center gap-2 text-xs font-medium text-slate-300">
-        <MessageSquare className="h-4 w-4 text-blue-400" />
+        <MessageSquare className="h-4 w-4 text-green-400" />
         {eyebrow}
       </div>
       <div className="mt-6 space-y-3">

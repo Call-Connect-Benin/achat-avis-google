@@ -11,7 +11,7 @@ export default function LoginForm() {
   return (
     <form action={formAction} className="space-y-4">
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-slate-700">
+        <label htmlFor="email" className="block text-sm font-medium text-slate-200">
           Email
         </label>
         <input
@@ -19,11 +19,11 @@ export default function LoginForm() {
           name="email"
           type="email"
           required
-          className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-slate-400 focus:outline-none focus:ring-1 focus:ring-slate-300"
+          className="mt-1 w-full rounded-lg border border-white/20 px-3 py-2 text-sm focus:border-slate-400 focus:outline-none focus:ring-1 focus:ring-white/20"
         />
       </div>
       <div>
-        <label htmlFor="password" className="block text-sm font-medium text-slate-700">
+        <label htmlFor="password" className="block text-sm font-medium text-slate-200">
           Mot de passe
         </label>
         <input
@@ -31,7 +31,7 @@ export default function LoginForm() {
           name="password"
           type="password"
           required
-          className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-slate-400 focus:outline-none focus:ring-1 focus:ring-slate-300"
+          className="mt-1 w-full rounded-lg border border-white/20 px-3 py-2 text-sm focus:border-slate-400 focus:outline-none focus:ring-1 focus:ring-white/20"
         />
       </div>
       {state.message && (

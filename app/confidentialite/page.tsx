@@ -10,14 +10,14 @@ export const metadata = {
 
 export default function ConfidentialitePage() {
   return (
-    <section className="mx-auto max-w-3xl px-4 py-16">
-      <h1 className="text-3xl font-bold tracking-tight text-slate-900">
+    <section className="mx-auto max-w-3xl px-4 py-8">
+      <h1 className="text-3xl font-bold tracking-tight text-white">
         Politique de confidentialité
       </h1>
 
-      <div className="mt-8 space-y-8 text-sm text-slate-700">
+      <div className="mt-8 space-y-6 text-sm text-slate-200">
         <div>
-          <h2 className="text-lg font-semibold text-slate-900">
+          <h2 className="text-lg font-semibold text-white">
             1. Responsable du traitement
           </h2>
           <p className="mt-2">
@@ -28,7 +28,7 @@ export default function ConfidentialitePage() {
         </div>
 
         <div>
-          <h2 className="text-lg font-semibold text-slate-900">
+          <h2 className="text-lg font-semibold text-white">
             2. Données collectées
           </h2>
           <p className="mt-2">
@@ -40,7 +40,7 @@ export default function ConfidentialitePage() {
         </div>
 
         <div>
-          <h2 className="text-lg font-semibold text-slate-900">
+          <h2 className="text-lg font-semibold text-white">
             3. Finalités
           </h2>
           <p className="mt-2">
@@ -50,7 +50,7 @@ export default function ConfidentialitePage() {
         </div>
 
         <div>
-          <h2 className="text-lg font-semibold text-slate-900">
+          <h2 className="text-lg font-semibold text-white">
             4. Base légale
           </h2>
           <p className="mt-2">
@@ -61,7 +61,7 @@ export default function ConfidentialitePage() {
         </div>
 
         <div>
-          <h2 className="text-lg font-semibold text-slate-900">
+          <h2 className="text-lg font-semibold text-white">
             5. Vos droits
           </h2>
           <p className="mt-2">
@@ -73,7 +73,7 @@ export default function ConfidentialitePage() {
         </div>
 
         <div>
-          <h2 className="text-lg font-semibold text-slate-900">
+          <h2 className="text-lg font-semibold text-white">
             6. Conservation
           </h2>
           <p className="mt-2">

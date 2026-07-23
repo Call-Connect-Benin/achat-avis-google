@@ -50,7 +50,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-20">
+    <section className="py-10">
       <div className="mx-auto max-w-6xl px-4">
         <AnimatedSection>
           <SectionHeading
@@ -60,26 +60,26 @@ export default function Services() {
           />
         </AnimatedSection>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-6 grid gap-6 md:grid-cols-3">
           {services.map((s, i) => {
             const Icon = s.icon;
             return (
               <AnimatedSection key={s.title} delay={i * 0.1}>
-                <div className="flex h-full flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100">
-                    <Icon className="h-6 w-6 text-blue-700" strokeWidth={1.5} />
+                <div className="flex h-full flex-col rounded-2xl bg-[#0d0d12] p-6 shadow-sm ring-1 ring-white/10">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-lime-400/10">
+                    <Icon className="h-6 w-6 text-lime-300" strokeWidth={1.5} />
                   </div>
-                  <h3 className="mt-4 font-semibold text-slate-900">
+                  <h3 className="mt-4 font-semibold text-white">
                     {s.title}
                   </h3>
-                  <p className="mt-2 text-sm text-slate-600">{s.description}</p>
+                  <p className="mt-2 text-sm text-slate-300">{s.description}</p>
                   <ul className="mt-4 space-y-2">
                     {s.features.map((f) => (
                       <li
                         key={f}
-                        className="flex items-center gap-2 text-sm text-slate-700"
+                        className="flex items-center gap-2 text-sm text-slate-200"
                       >
-                        <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-lime-400/[0.06]0" />
                         {f}
                       </li>
                     ))}
@@ -87,7 +87,7 @@ export default function Services() {
                   <div className="mt-auto pt-6">
                     <Link
                       href="/e-reputation"
-                      className="inline-flex w-full items-center justify-center rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
+                      className="inline-flex w-full items-center justify-center rounded-full bg-green-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-green-700"
                     >
                       En savoir plus
                     </Link>

@@ -9,14 +9,14 @@ export const metadata = {
 
 export default function MentionsLegalesPage() {
   return (
-    <section className="mx-auto max-w-3xl px-4 py-16">
-      <h1 className="text-3xl font-bold tracking-tight text-slate-900">
+    <section className="mx-auto max-w-3xl px-4 py-8">
+      <h1 className="text-3xl font-bold tracking-tight text-white">
         Mentions légales
       </h1>
 
-      <div className="mt-8 space-y-8 text-sm text-slate-700">
+      <div className="mt-8 space-y-6 text-sm text-slate-200">
         <div>
-          <h2 className="text-lg font-semibold text-slate-900">
+          <h2 className="text-lg font-semibold text-white">
             1. Éditeur du site
           </h2>
           <p className="mt-2">
@@ -33,19 +33,19 @@ export default function MentionsLegalesPage() {
             TVA intracommunautaire : {company.tva}
             <br />
             Téléphone :{" "}
-            <a href={`tel:${company.phone}`} className="text-slate-700">
+            <a href={`tel:${company.phone}`} className="text-slate-200">
               {company.phoneDisplay}
             </a>
             <br />
             Email :{" "}
-            <a href={`mailto:${company.email}`} className="text-slate-700">
+            <a href={`mailto:${company.email}`} className="text-slate-200">
               {company.email}
             </a>
           </p>
         </div>
 
         <div>
-          <h2 className="text-lg font-semibold text-slate-900">
+          <h2 className="text-lg font-semibold text-white">
             2. Directeur de la publication
           </h2>
           <p className="mt-2">
@@ -54,7 +54,7 @@ export default function MentionsLegalesPage() {
         </div>
 
         <div>
-          <h2 className="text-lg font-semibold text-slate-900">
+          <h2 className="text-lg font-semibold text-white">
             3. Hébergement
           </h2>
           <p className="mt-2">
@@ -65,7 +65,7 @@ export default function MentionsLegalesPage() {
         </div>
 
         <div>
-          <h2 className="text-lg font-semibold text-slate-900">
+          <h2 className="text-lg font-semibold text-white">
             4. Propriété intellectuelle
           </h2>
           <p className="mt-2">
@@ -76,7 +76,7 @@ export default function MentionsLegalesPage() {
         </div>
 
         <div>
-          <h2 className="text-lg font-semibold text-slate-900">
+          <h2 className="text-lg font-semibold text-white">
             5. Avis des consommateurs
           </h2>
           <p className="mt-2">

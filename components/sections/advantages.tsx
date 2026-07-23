@@ -71,7 +71,7 @@ const advantages: {
 
 export default function Advantages() {
   return (
-    <section className="relative overflow-hidden bg-blue-50 py-20">
+    <section className="relative overflow-hidden bg-lime-400/[0.06] py-10">
       <div className="pointer-events-none absolute inset-0 -z-0">
         <Image
           src="/images/img-06.jpeg"
@@ -90,21 +90,21 @@ export default function Advantages() {
           />
         </AnimatedSection>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {advantages.map((a, i) => {
             const Icon = a.icon;
             return (
               <AnimatedSection key={a.title} delay={i * 0.05}>
-                <div className="flex h-full flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-sm">
-                  <Icon className="h-7 w-7 text-blue-700" strokeWidth={1.5} />
-                  <h3 className="mt-4 font-semibold text-slate-900">
+                <div className="flex h-full flex-col rounded-2xl bg-[#0d0d12] p-6 shadow-sm ring-1 ring-white/10 transition hover:-translate-y-0.5 hover:shadow-sm">
+                  <Icon className="h-7 w-7 text-lime-300" strokeWidth={1.5} />
+                  <h3 className="mt-4 font-semibold text-white">
                     {a.title}
                   </h3>
-                  <p className="mt-2 text-sm text-slate-600">{a.description}</p>
+                  <p className="mt-2 text-sm text-slate-300">{a.description}</p>
                   <div className="mt-auto pt-6">
                     <Link
                       href={a.href}
-                      className="inline-flex w-full items-center justify-center rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
+                      className="inline-flex w-full items-center justify-center rounded-full bg-green-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-green-700"
                     >
                       {a.cta}
                     </Link>

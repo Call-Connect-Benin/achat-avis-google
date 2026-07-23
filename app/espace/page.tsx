@@ -20,30 +20,30 @@ export default async function EspacePage() {
   ]);
 
   return (
-    <section className="mx-auto max-w-6xl px-4 py-12">
+    <section className="mx-auto max-w-6xl px-4 py-6">
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-semibold tracking-tight text-slate-900">
+          <h1 className="text-3xl font-semibold tracking-tight text-white">
             Bonjour {session!.name}
           </h1>
-          <p className="mt-1 text-sm text-slate-600">
+          <p className="mt-1 text-sm text-slate-300">
             {businesses.length} établissement(s) · {totalReviews} avis collectés
           </p>
         </div>
         <form action={logout}>
           <button
             type="submit"
-            className="rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100"
+            className="rounded-full border border-white/20 bg-[#0d0d12] px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-[#17171f]"
           >
             Se déconnecter
           </button>
         </form>
       </div>
 
-      <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_320px]">
+      <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_320px]">
         <div className="space-y-4">
           {businesses.length === 0 && (
-            <p className="rounded-2xl bg-slate-50 p-6 text-sm text-slate-600">
+            <p className="rounded-2xl bg-[#111118] p-6 text-sm text-slate-300">
               Aucun établissement pour le moment. Créez votre première fiche
               pour générer vos liens de collecte d'avis.
             </p>
@@ -52,13 +52,13 @@ export default async function EspacePage() {
             <Link
               key={b.id}
               href={`/espace/entreprises/${b.id}`}
-              className="flex items-center justify-between rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5"
+              className="flex items-center justify-between rounded-2xl bg-[#0d0d12] p-5 shadow-sm ring-1 ring-white/10 transition hover:-translate-y-0.5"
             >
               <div>
-                <p className="font-semibold text-slate-900">{b.name}</p>
-                <p className="text-sm text-slate-500">{b.platform}</p>
+                <p className="font-semibold text-white">{b.name}</p>
+                <p className="text-sm text-slate-400">{b.platform}</p>
               </div>
-              <div className="text-right text-sm text-slate-500">
+              <div className="text-right text-sm text-slate-400">
                 <p>{b._count.reviews} avis</p>
                 <p>{b._count.links} liens</p>
               </div>
@@ -68,28 +68,28 @@ export default async function EspacePage() {
 
         <form
           action={createBusiness}
-          className="h-fit space-y-4 rounded-2xl bg-slate-50 p-6"
+          className="h-fit space-y-4 rounded-2xl bg-[#111118] p-6"
         >
-          <h2 className="font-semibold text-slate-900">Nouvel établissement</h2>
+          <h2 className="font-semibold text-white">Nouvel établissement</h2>
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-slate-700">
+            <label htmlFor="name" className="block text-sm font-medium text-slate-200">
               Nom
             </label>
             <input
               id="name"
               name="name"
               required
-              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-slate-400 focus:outline-none focus:ring-1 focus:ring-slate-300"
+              className="mt-1 w-full rounded-lg border border-white/20 px-3 py-2 text-sm focus:border-slate-400 focus:outline-none focus:ring-1 focus:ring-white/20"
             />
           </div>
           <div>
-            <label htmlFor="platform" className="block text-sm font-medium text-slate-700">
+            <label htmlFor="platform" className="block text-sm font-medium text-slate-200">
               Plateforme
             </label>
             <select
               id="platform"
               name="platform"
-              className="mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm focus:border-slate-400 focus:outline-none focus:ring-1 focus:ring-slate-300"
+              className="mt-1 w-full rounded-lg border border-white/20 bg-[#0d0d12] px-3 py-2 text-sm focus:border-slate-400 focus:outline-none focus:ring-1 focus:ring-white/20"
             >
               <option>Google</option>
               <option>Trustpilot</option>
@@ -98,7 +98,7 @@ export default async function EspacePage() {
             </select>
           </div>
           <div>
-            <label htmlFor="reviewUrl" className="block text-sm font-medium text-slate-700">
+            <label htmlFor="reviewUrl" className="block text-sm font-medium text-slate-200">
               URL de dépôt d'avis
             </label>
             <input
@@ -107,7 +107,7 @@ export default async function EspacePage() {
               type="url"
               required
               placeholder="https://search.google.com/local/writepanel?placeid=…"
-              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-slate-400 focus:outline-none focus:ring-1 focus:ring-slate-300"
+              className="mt-1 w-full rounded-lg border border-white/20 px-3 py-2 text-sm focus:border-slate-400 focus:outline-none focus:ring-1 focus:ring-white/20"
             />
           </div>
           <button
