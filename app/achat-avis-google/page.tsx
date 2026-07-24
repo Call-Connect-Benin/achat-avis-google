@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   title: "Achat avis Google : risques et alternatives",
   description:
     "Pourquoi acheter des avis Google est risqué. Découvrez les sanctions Google et notre alternative conforme pour obtenir des avis authentiques.",
+  alternates: { canonical: "/achat-avis-google" },
+  robots: { index: true, follow: true },
 };
 
 const risks = [

@@ -14,22 +14,20 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Achat Avis Google France | Guides Vérifiés & Dashboard",
+    default: "Logiciel Avis Google & E-réputation | Achat Avis Google",
     template: `%s | ${site.name}`,
   },
   description: site.description,
   keywords: [
-    "achat avis google",
-    "acheter avis google",
-    "achat avis google france",
-    "avis google vérifiés",
-    "guides google rémunérés",
-    "dashboard avis google",
+    "logiciel avis google",
     "gestion avis google",
+    "plateforme avis clients",
+    "avis google vérifiés",
+    "dashboard avis google",
     "e-réputation entreprise",
   ],
   openGraph: {
-    title: "Achat Avis Google France | Guides Vérifiés & Dashboard",
+    title: "Logiciel Avis Google & E-réputation | Achat Avis Google",
     description: site.description,
     url: site.url,
     siteName: site.name,
@@ -46,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Achat Avis Google France | Guides Vérifiés & Dashboard",
+    title: "Logiciel Avis Google & E-réputation | Achat Avis Google",
     description: site.description,
     images: [site.ogImage],
   },

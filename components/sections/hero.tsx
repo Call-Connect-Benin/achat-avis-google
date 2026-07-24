@@ -100,7 +100,7 @@ export default function Hero() {
                 <span className="h-1.5 w-1.5 rounded-full bg-lime-400" /> Avis Google 100&nbsp;% authentiques
               </span>
               <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                Achat avis Google : transformez vos clients en{" "}
+                Pilotez vos avis Google et transformez vos clients en{" "}
                 <span className="relative inline-block">
                   <span className="relative z-10 text-lime-300">ambassadeurs</span>
                   <svg className="absolute -bottom-1 left-0 z-0 w-full" viewBox="0 0 200 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
