@@ -1,29 +1,47 @@
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
+
+// Destinataires de tous les formulaires de contact (surchargeable via CONTACT_TO).
+export const CONTACT_RECIPIENTS = (
+  process.env.CONTACT_TO ||
+  "albert.lanne@gmail.com,ekomedia.fr@gmail.com,mouhsine.rasfa@gmail.com"
+)
+  .split(",")
+  .map((s) => s.trim())
+  .filter(Boolean);
 
 export type ContactEmailInput = {
   name: string;
   email: string;
   phone?: string;
   message: string;
+  source?: string;
 };
 
-export async function sendContactEmail(input: ContactEmailInput) {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    console.warn(
-      "[email] RESEND_API_KEY manquant : email non envoyé (données conservées localement).",
-    );
-    return { sent: false };
-  }
+let cached: nodemailer.Transporter | null = null;
 
-  const resend = new Resend(apiKey);
-  const to = process.env.CONTACT_TO_EMAIL ?? "contact@achat-avis-google.com";
-  const from =
-    process.env.CONTACT_FROM_EMAIL ?? "Achat Avis Google <onboarding@resend.dev>";
+function getTransport(): nodemailer.Transporter | null {
+  if (cached) return cached;
+  const host = process.env.SMTP_HOST;
+  const user = process.env.SMTP_USER;
+  const pass = process.env.SMTP_PASSWORD || process.env.SMTP_PASS;
+  if (!host || !user || !pass) return null;
+  const port = Number(process.env.SMTP_PORT || 587);
+  cached = nodemailer.createTransport({
+    host,
+    port,
+    secure: process.env.SMTP_SECURE ? process.env.SMTP_SECURE === "true" : port === 465,
+    auth: { user, pass },
+  });
+  return cached;
+}
+
+// Relais SMTP classique vers les 3 boîtes. Repli gracieux si non configuré.
+export async function sendContactEmail(input: ContactEmailInput) {
+  const transport = getTransport();
+  const from = process.env.MAIL_FROM || process.env.SMTP_USER || "no-reply@achat-avis-google.com";
 
   const text = [
-    `Nouvelle demande de contact`,
-    ``,
+    `Source : ${input.source || "formulaire de contact"}`,
     `Nom : ${input.name}`,
     `Email : ${input.email}`,
     input.phone ? `Téléphone : ${input.phone}` : null,
@@ -34,22 +52,22 @@ export async function sendContactEmail(input: ContactEmailInput) {
     .filter(Boolean)
     .join("\n");
 
+  if (!transport) {
+    console.warn("[email] SMTP non configuré : message non envoyé.", { to: CONTACT_RECIPIENTS });
+    return { sent: false };
+  }
+
   try {
-    const { error } = await resend.emails.send({
+    await transport.sendMail({
       from,
-      to,
+      to: CONTACT_RECIPIENTS,
       replyTo: input.email,
-      subject: `Nouvelle demande de ${input.name}`,
+      subject: `Nouvelle demande de ${input.name} — Achat Avis Google`,
       text,
     });
-
-    if (error) {
-      console.error("[email] échec envoi Resend :", error);
-      return { sent: false, error };
-    }
     return { sent: true };
   } catch (e) {
-    console.error("[email] exception envoi Resend :", e);
-    return { sent: false, error: e };
+    console.error("[email] échec envoi SMTP :", e);
+    return { sent: false };
   }
 }

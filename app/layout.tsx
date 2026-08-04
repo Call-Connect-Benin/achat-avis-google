@@ -5,6 +5,7 @@ import { site } from "@/lib/site";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import JsonLd from "@/components/json-ld";
+import ExitIntentPopup from "@/components/exit-intent-popup";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -67,6 +68,7 @@ export default function RootLayout({
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
+        <ExitIntentPopup />
       </body>
     </html>
   );
