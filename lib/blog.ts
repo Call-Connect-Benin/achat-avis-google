@@ -347,7 +347,7 @@ export const articles: Article[] = [
       { type: "h2", text: "Exemple concret" },
       {
         type: "p",
-        text: "« Bonjour Marie, merci pour votre retour. Nous sommes désolés que votre expérience n'ait pas été à la hauteur. Nous prenons ce point très au sérieux et souhaitons échanger avec vous directement : pouvez-vous nous contacter au 01 84 16 35 29 ? »",
+        text: "« Bonjour Marie, merci pour votre retour. Nous sommes désolés que votre expérience n'ait pas été à la hauteur. Nous prenons ce point très au sérieux et souhaitons échanger avec vous directement : pouvez-vous nous contacter au 06 44 67 86 42 ? »",
       },
       {
         type: "p",

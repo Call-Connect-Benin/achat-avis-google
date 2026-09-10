@@ -153,6 +153,16 @@ export default function SiteFooter() {
                 </li>
                 <li>
                   <a
+                    href={company.whatsapp}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-lime-400"
+                  >
+                    WhatsApp
+                  </a>
+                </li>
+                <li>
+                  <a
                     href={`mailto:${company.email}`}
                     className="hover:text-lime-400"
                   >

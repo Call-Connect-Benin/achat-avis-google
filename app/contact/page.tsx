@@ -14,7 +14,7 @@ const hours = [
 const contactFaqs = [
   {
     q: "Quel est le délai de réponse ?",
-    a: "Nous répondons à toutes les demandes sous 24h ouvrées. Pour les urgences, appelez-nous directement au 01 84 16 35 29.",
+    a: "Nous répondons à toutes les demandes sous 24h ouvrées. Pour les urgences, appelez-nous directement au 06 44 67 86 42.",
   },
   {
     q: "Quels types de demandes puis-je vous adresser ?",
@@ -129,6 +129,22 @@ export default function ContactPage() {
                         <p className="text-sm font-semibold text-white">Téléphone</p>
                         <a
                           href={`tel:${company.phone}`}
+                          className="text-sm text-lime-700 hover:text-lime-800"
+                        >
+                          {company.phoneDisplay}
+                        </a>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-lime-400/10">
+                        <MessageCircle className="h-5 w-5 text-lime-300" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-white">WhatsApp</p>
+                        <a
+                          href={company.whatsapp}
+                          target="_blank"
+                          rel="noreferrer"
                           className="text-sm text-lime-700 hover:text-lime-800"
                         >
                           {company.phoneDisplay}
